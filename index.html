@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irfaan Ahamed - Full Stack Developer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        #tsparticles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        }
+        .hero {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        position: relative;
+        overflow: hidden;
+        padding: 80px 20px;
+        }
+
+
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            position: relative;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: slideUp 1s ease-out 0.5s forwards;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: slideUp 1s ease-out 0.8s forwards;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: slideUp 1s ease-out 1.1s forwards;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: slideUp 1s ease-out 1.4s forwards;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+        }
+
+        .project-header h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        /* Education & Contact Sections */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 3rem;
+        }
+
+        .info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .contact-link i {
+            font-size: 1.2rem;
+            width: 25px;
+        }
+
+        /* Additional Info */
+        .additional-info {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            margin: 40px 0;
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .info-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .info-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            border: 1px solid #dee2e6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav {
+                position: relative;
+                top: auto;
+                right: auto;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div id="tsparticles">
+            <button class="nav-btn" onclick="scrollToSection('skills')">Skills</button>
+            <button class="nav-btn" onclick="scrollToSection('projects')">Projects</button>
+            <button class="nav-btn" onclick="scrollToSection('contact')">Contact</button>
+        </div>
+        
+        <div class="hero-content">
+            <h1>Irfaan Ahamed</h1>
+            <p class="subtitle">Full Stack Developer</p>
+            <p class="description">
+                Passionate and motivated entry-level software developer with a solid foundation in front-end and back-end technologies. 
+                Quick learner who thrives in fast-paced environments and enjoys solving complex problems through collaboration and innovation.
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-code"></i>
+                    View My Work
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category fade-in">
+                <h3><i class="fas fa-server"></i> Backend Development</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Java (Core & Advanced)</span>
+                    <span class="skill-tag">Spring Boot</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Servlet</span>
+                </div>
+            </div>
+            
+            <div class="skill-category fade-in">
+                <h3><i class="fas fa-laptop-code"></i> Frontend Development</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Bootstrap</span>
+                </div>
+            </div>
+            
+            <div class="skill-category fade-in">
+                <h3><i class="fas fa-database"></i> Database</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">MySQL</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="additional-info fade-in">
+            <div class="info-row">
+                <div class="info-item">
+                    <h4><i class="fas fa-language"></i> Languages</h4>
+                    <div class="tag-list">
+                        <span class="tag">English</span>
+                        <span class="tag">Tamil</span>
+                        <span class="tag">Hindi</span>
+                        <span class="tag">Urdu</span>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <h4><i class="fas fa-certificate"></i> Certifications</h4>
+                    <div class="tag-list">
+                        <span class="tag">Full Stack Developer (IBM)</span>
+                        <span class="tag">Web 'O' Spider (HITS)</span>
+                        <span class="tag">Outstanding Project (CODEATHON - SLA Institute)</span>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <h4><i class="fas fa-heart"></i> Hobbies</h4>
+                    <div class="tag-list">
+                        <span class="tag">Gymming</span>
+                        <span class="tag">Biking</span>
+                        <span class="tag">Gaming</span>
+                        <span class="tag">Music</span>
+                        <span class="tag">Reading</span>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <h4><i class="fas fa-user-tie"></i> Soft Skills</h4>
+                    <div class="tag-list">
+                        <span class="tag">Communication</span>
+                        <span class="tag">Problem Solving</span>
+                        <span class="tag">Analytical Thinking</span>
+                        <span class="tag">Teamwork</span>
+                        <span class="tag">Time Management</span>
+                        <span class="tag">Adaptability</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Projects Section -->
+<section class="section" id="projects">
+    <h2>Featured Projects</h2>
+
+    <!-- Grid Row 1: Projects 1 and 2 -->
+    <div class="projects-grid" style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+        <!-- Project 1 -->
+        <div class="project-card fade-in" style="flex: 1 1 calc(50% - 10px);">
+            <div class="project-header">
+                <h3><i class="fas fa-dumbbell"></i> Fitness Tracker Bot</h3>
+            </div>
+            <div class="project-content">
+                <p>Developed a comprehensive Fitness Tracker Bot to monitor physical activity, calorie intake, and workout progress using automated prompts and real-time data logging. Features intelligent tracking and progress analytics.</p>
+                <div class="skill-tags" style="margin-top: 15px;">
+                    <span class="skill-tag">Automation</span>
+                    <span class="skill-tag">Data Logging</span>
+                    <span class="skill-tag">Real-time Tracking</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card fade-in" style="flex: 1 1 calc(50% - 10px);">
+            <div class="project-header">
+                <h3><i class="fas fa-tools"></i> SERVZO</h3>
+            </div>
+            <div class="project-content">
+                <p>SERVZO is a web-based platform designed to connect local service providers with customers seamlessly. It enables providers to showcase their services and manage bookings, while customers can easily find and hire trusted professionals.</p>
+                <div class="skill-tags" style="margin-top: 15px;">
+                    <span class="skill-tag">Web Platform</span>
+                    <span class="skill-tag">Service Management</span>
+                    <span class="skill-tag">User Experience</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grid Row 2: Projects 3 and 4 -->
+    <div class="projects-grid" style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <!-- Project 3 -->
+        <div class="project-card fade-in" style="flex: 1 1 calc(50% - 10px);">
+            <div class="project-header">
+                <h3><i class="fas fa-map-marker-alt"></i> Memories - Location-Based Story Sharing Web</h3>
+            </div>
+            <div class="project-content">
+                <p>Memories is a full-stack web application that allows users to share and pin personal stories to specific geographic locations on an interactive map.</p>
+                <div class="skill-tags" style="margin-top: 15px;">
+                    <span class="skill-tag">Story Sharing</span>
+                    <span class="skill-tag">Location Based</span>
+                    <span class="skill-tag">Interactive Map</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 4 (Duplicate SERVZO removed or replaced) -->
+        <div class="project-card fade-in" style="flex: 1 1 calc(50% - 10px);">
+            <div class="project-header">
+                <h3><i class="fas fa-hands-helping"></i> Volunteer Connect</h3>
+            </div>
+            <div class="project-content">
+                <p>A platform connecting volunteers with local NGOs and causes, enabling sign-ups, event management, and impact tracking.</p>
+                <div class="skill-tags" style="margin-top: 15px;">
+                    <span class="skill-tag">Community Platform</span>
+                    <span class="skill-tag">Volunteer Management</span>
+                    <span class="skill-tag">Social Impact</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Resume Section -->
+<section class="section" id="resume" style="text-align: center; padding: 40px 0;">
+    <h2>Download My Resume</h2>
+    <p>You can view or download my latest resume by clicking the button below.</p>
+    <a href="https://drive.google.com/uc?export=download&id=1FBY9ObaWQD87Sms_AumCvz3_dFoKvSP6" download class="btn btn-primary" style="margin-top: 15px; padding: 10px 20px; font-size: 1rem;">
+        <i class="fas fa-download"></i> Download Resume
+    </a>
+</section>
+
+
+    <!-- Education & Contact Section -->
+    <section class="section" id="contact">
+        <h2>Education & Contact</h2>
+        <div class="info-grid">
+            <div class="info-card fade-in">
+                <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                <div style="margin-top: 20px;">
+                    <div style="margin-bottom: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px;">
+                        <h4>Bachelor Of Computer Application</h4>
+                        <p><strong>Hindustan Institute Of Technology and Sciences</strong></p>
+                        <p>2022-2025 | CGPA: 8.80</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px;">
+                        <h4>Secondary Education (12th Grade)</h4>
+                        <p><strong>Kendriya Vidyalaya IIT Chennai</strong></p>
+                        <p>2020-2022 | 70%</p>
+                    </div>
+                    
+                    <div style="padding: 15px; background: #f8f9fa; border-radius: 10px;">
+                        <h4>Secondary Education (10th Grade)</h4>
+                        <p><strong>Kendriya Vidyalaya IIT Chennai</strong></p>
+                        <p>2010-2020 | 72%</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-card fade-in">
+                <h3><i class="fas fa-map-marker-alt"></i> Contact Information</h3>
+                <p style="margin-bottom: 20px;">Located in Thazhambur, Chennai</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:kirfaanahamed1610@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>kirfaanahamed1610@gmail.com</span>
+                    </a>
+                    
+                    <a href="tel:9025689520" class="contact-link">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 9025689520</span>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/irfaan-ahamed-k-0529b42a4/" class="contact-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn: Irfaan Ahamed</span>
+                    </a>
+                    
+                    <a href="https://github.com/irfaan1610" class="contact-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub: Irfaan Ahamed</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add smooth scrolling to CTA buttons
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add floating animation to skill tags
+        document.querySelectorAll('.skill-tag').forEach((tag, index) => {
+            tag.style.animationDelay = `${index * 0.1}s`;
+        });
+        tsParticles.load("tsparticles", {
+        background: { color: { value: "#667eea" } },
+        particles: {
+        number: { value: 40 },
+        size: { value: 3 },
+        move: { enable: true, speed: 1 },
+        links: { enable: true, color: "#ffffff", distance: 150 },
+        color: { value: "#ffffff" }
+        }
+        });
+    </script>
+</body>
+</html>
