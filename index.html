@@ -396,6 +396,46 @@
             opacity: 1;
             transform: translateY(0);
         }
+        .btn-certificate {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white !important;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            }
+        .btn-certificate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        .project-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        }
+
+        .project-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        }
+        .project-content p {
+        flex-grow: 1;
+        }
+        .project-content .btn-certificate {
+        margin-top: 15px;
+        align-self: flex-start; /* keeps button aligned left, change to center if needed */
+        }
+        
+
+
     </style>
 </head>
 <body>
@@ -409,10 +449,9 @@
         
         <div class="hero-content">
             <h1>Irfaan Ahamed</h1>
-            <p class="subtitle">Full Stack Developer</p>
+            <p class="subtitle">Full Stack Developer & Prompt Engineer</p>
             <p class="description">
-                Passionate and motivated entry-level software developer with a solid foundation in front-end and back-end technologies. 
-                Quick learner who thrives in fast-paced environments and enjoys solving complex problems through collaboration and innovation.
+               Aspiring Full-Stack Developer skilled in Java, Spring Boot, and modern web technologies, with added proficiency in Prompt Engineering. Driven by curiosity and problem-solving, I enjoy creating efficient, user-focused applications while embracing clean code, continuous learning, and teamwork.
             </p>
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">
@@ -434,19 +473,16 @@
             <div class="skill-category fade-in">
                 <h3><i class="fas fa-server"></i> Backend Development</h3>
                 <div class="skill-tags">
-                    <span class="skill-tag">Java (Core & Advanced)</span>
+                    <span class="skill-tag">Java</span>
                     <span class="skill-tag">Spring Boot</span>
                     <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Servlet</span>
-                    <span class="skill-tag">JSP</span>
                 </div>
             </div>
             
             <div class="skill-category fade-in">
                 <h3><i class="fas fa-laptop-code"></i> Frontend Development</h3>
                 <div class="skill-tags">
-                    <span class="skill-tag">HTML</span>
-                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">HTML & CSS</span>
                     <span class="skill-tag">JavaScript</span>
                     <span class="skill-tag">Bootstrap</span>
                     <span class="skill-tag">React</span>
@@ -458,29 +494,121 @@
                 <h3><i class="fas fa-database"></i> Database</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">PostgreSql</span>
                 </div>
             </div>
         </div>
 
+<!-- Certificates Section -->
+ 
+<section class="section" id="certificates">
+  <h2>Certificates</h2>
+  <div class="projects-grid">
+
+    <div class="project-card fade-in">
+      <div class="project-header"><h3>Full Stack Developer - SoftLogic</h3></div>
+      <div class="project-content">
+        <p>Certification for Full Stack Development program at SoftLogic Academy.</p>
+        <a href="https://drive.google.com/uc?export=download&id=1d_UZG6enhW0AI0Dc9nDhYZTShmffwHXF" target="_blank" class="btn-certificate">
+  <i class="fas fa-certificate"></i> View Certificate
+</a>
+
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-header"><h3>Java Fundamentals - IBM</h3></div>
+      <div class="project-content">
+        <p>IBM certification in Java fundamentals and programming concepts.</p>
+        <a href="https://courses.etrain.skillsnetwork.site/certificates/934dac5ef6104178863b94cbe9338daa" target="_blank" class="btn-certificate">
+          <i class="fas fa-certificate"></i> View Certificate
+        </a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-header"><h3>Prompt Engineering - SimpliLearn</h3></div>
+      <div class="project-content">
+        <p>Professional certificate in Prompt Engineering and AI-driven applications.</p>
+        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI0MjgzIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODgyOTU2NV85MjEyMjkwMTc1NTc4MTUwODIwNS5wbmciLCJ1c2VybmFtZSI6IklyZmFhbiBBaGFtZWQifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F7216%2FIntroduction%2520to%2520Prompt%2520Engineering%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1413879721585198979&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVD65yyUizLAs3CEuyrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDADEKv4pBAAAA" target="_blank" class="btn-certificate">
+          <i class="fas fa-certificate"></i> View Certificate
+        </a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-header"><h3>Master Artificial Intelligence - SimpliLearn</h3></div>
+      <div class="project-content">
+        <p>Certification in Artificial Intelligence concepts and applications.</p>
+        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI1MDY5IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODgzNzgzNV85MjE4Njg5MTc1NTg4NDAwNzk3Ni5wbmciLCJ1c2VybmFtZSI6IklyZmFhbiBBaGFtZWQifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F8065%2FMaster%2520AI%2520for%2520Web%2520App%2520Development%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1413879721585198979&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVN83K8M9KKgoxCkuyrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDAEbsfbVBAAAA" target="_blank" class="btn-certificate">
+          <i class="fas fa-certificate"></i> View Certificate
+        </a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-header"><h3>Python 101 for Data Science - IBM</h3></div>
+      <div class="project-content">
+        <p>Introductory Python certification by IBM for Data Science.</p>
+        <a href="https://courses.etrain.skillsnetwork.site/certificates/0a5e2882c8154560b119ead0cdef6d4c" target="_blank" class="btn-certificate">
+          <i class="fas fa-certificate"></i> View Certificate
+        </a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-header"><h3>PostgreSQL - SimpliLearn</h3></div>
+      <div class="project-content">
+        <p>Certified PostgreSQL Database Management by SimpliLearn.</p>
+        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIzMjA1IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODgzNTM1Ml85MjEyMjkwMTc1NTg2MDI5MDkzNC5wbmciLCJ1c2VybmFtZSI6IklyZmFhbiBBaGFtZWQifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F5991%2FPostgreSQL%2520%3A%2520Become%2520an%2520SQL%2520developer%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1413879721585198979&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVL3FOsig1TC42CkuyrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDAOFnARtBAAAA" target="_blank" class="btn-certificate">
+          <i class="fas fa-certificate"></i> View Certificate
+        </a>
+      </div>
+    </div>
+
+    
+
+    
+  </div>
+</section>
+
+
+
+        
         <div class="additional-info fade-in">
-            <div class="info-row">
-                <div class="info-item">
-                    <h4><i class="fas fa-language"></i> Languages</h4>
-                    <div class="tag-list">
-                        <span class="tag">English</span>
-                        <span class="tag">Tamil</span>
-                        <span class="tag">Hindi</span>
-                        <span class="tag">Urdu</span>
-                    </div>
-                </div>
+            
                 
+         <h2>Achievements</h2>
                 <div class="info-item">
-                    <h4><i class="fas fa-certificate"></i> Certifications</h4>
-                    <div class="tag-list">
-                        <span class="tag">Full Stack Developer (IBM)</span>
-                        <span class="tag">Web 'O' Spider (HITS)</span>
-                        <span class="tag">Outstanding Project (CODEATHON - SLA Institute)</span>
+                    <div>
+                        <h4>Finalist – Soft Logic Academy (Codeathon Event)</h4>
+                        <p>•	Participated in a codeathon solving real-world problems using frontend technologies and MySQL.<br>
+                            •	Collaborated in a team to develop a working prototype within a month.
+</p><br>
+                        <h4>Participant & Winner – Web ‘O’ Spider (Hindustan University)</h4>
+                        <p>• Developed a responsive UI in under 1 hour during the technical event.</p>
                     </div>
+</div>
+</div>
+
+
+        <div class="additional-info fade-in">
+            
+                
+         <h2>Additional Information</h2>
+                <div class="info-item">
+                <div class="info-row">
+                <div class="info-item">
+                    <h4><i class="fas fa-user-tie"></i> Soft Skills</h4>
+                    <div class="tag-list">
+                        <span class="tag">Communication</span>
+                        <span class="tag">Problem Solving</span>
+                        <span class="tag">Analytical Thinking</span>
+                        <span class="tag">Teamwork</span>
+                        <span class="tag">Time Management</span>
+                        <span class="tag">Adaptability</span>
+                    </div>
+                    
                 </div>
                 
                 <div class="info-item">
@@ -495,18 +623,17 @@
                 </div>
                 
                 <div class="info-item">
-                    <h4><i class="fas fa-user-tie"></i> Soft Skills</h4>
+                   <h4><i class="fas fa-language"></i> Languages</h4>
                     <div class="tag-list">
-                        <span class="tag">Communication</span>
-                        <span class="tag">Problem Solving</span>
-                        <span class="tag">Analytical Thinking</span>
-                        <span class="tag">Teamwork</span>
-                        <span class="tag">Time Management</span>
-                        <span class="tag">Adaptability</span>
+                        <span class="tag">English</span>
+                        <span class="tag">Tamil</span>
+                        <span class="tag">Hindi</span>
+                        <span class="tag">Urdu</span>
                     </div>
                 </div>
             </div>
-        </div>
+                        </div>
+
     </section>
 
    <!-- Projects Section -->
@@ -582,11 +709,13 @@
 
 </section>
 
+
+
 <!-- Resume Section -->
 <section class="section" id="resume" style="text-align: center; padding: 40px 0;">
     <h2>Download My Resume</h2>
     <p>You can view or download my latest resume by clicking the button below.</p>
-    <a href="https://drive.google.com/uc?export=download&id=1vpgHlKKdjQMFs35Hmm_3aDHGdi9Vslvh" download class="btn btn-primary" style="margin-top: 15px; padding: 10px 20px; font-size: 1rem;">
+    <a href="https://drive.google.com/uc?export=download&id=1Tmf_DygJR4WgFIHdpl4SuqFo6v4Zkl9G" download class="btn btn-primary" style="margin-top: 15px; padding: 10px 20px; font-size: 1rem;">
         <i class="fas fa-download"></i> Download Resume
     </a>
 </section>
