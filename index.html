@@ -477,6 +477,28 @@
             }
         }
 
+        .btn-resume {
+            background: var(--accent-gradient);
+            color: white !important;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+        .btn-resume:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
         /* Dark mode specific styles */
         .dark-mode .contact-link {
             background: #3a3a3a;
@@ -605,7 +627,7 @@
                     <div class="project-header"><h3>Full Stack Developer - SoftLogic</h3></div>
                     <div class="project-content">
                         <p>Certification for Full Stack Development program at SoftLogic Academy.</p>
-                        <a href="https://drive.google.com/uc?export=download&id=1d_UZG6enhW0AI0Dc9nDhYZTShmffwHXF" target="_blank" class="btn-certificate">
+                        <a href="https://drive.google.com/file/d/1d_UZG6enhW0AI0Dc9nDhYZTShmffwHXF/view?usp=drive_link" target="_blank" class="btn-certificate">
                             <i class="fas fa-certificate"></i> View Certificate
                         </a>
                     </div>
@@ -797,14 +819,18 @@
         </div>
     </section>
 
+
     <!-- Resume Section -->
-    <section class="section" id="resume" style="text-align: center; padding: 40px 0;">
-        <h2>Download My Resume</h2>
-        <p>You can view or download my latest resume by clicking the button below.</p>
-        <a href="https://drive.google.com/uc?export=download&id=1Tmf_DygJR4WgFIHdpl4SuqFo6v4Zkl9G" download class="btn btn-primary" style="margin-top: 15px; padding: 10px 20px; font-size: 1rem;">
-            <i class="fas fa-download"></i> Download Resume
-        </a>
-    </section>
+<section class="section" id="resume" style="text-align: center; padding: 40px 0;">
+    <h2>Download My Resume</h2>
+    <p>You can download my latest resume by clicking the button below.</p>
+    <a href="https://drive.google.com/uc?export=download&id=1Tmf_DygJR4WgFIHdpl4SuqFo6v4Zkl9G" 
+       download 
+       class="btn-resume">
+       <i class="fas fa-download"></i> Download Resume
+    </a>
+</section>
+
 
     <!-- Education & Contact Section -->
     <section class="section" id="contact">
