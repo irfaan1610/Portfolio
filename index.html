@@ -23,6 +23,8 @@
             --card-bg: #2a2a2a;
             --accent-gradient: linear-gradient(135deg, #2c3e50, #34495e);
             --section-bg: #121212;
+            --professional-primary: #7fb3d3;
+            --professional-secondary: #5a9fd4;
         }
 
         * {
@@ -69,6 +71,18 @@
             color: #333;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Dark mode navigation fix */
+        .dark-mode .nav-btn {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .dark-mode .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
         }
 
         /* Hero Section */
@@ -214,6 +228,7 @@
             text-align: center;
             margin-bottom: 3rem;
             position: relative;
+            color: var(--text-color);
         }
 
         .section h2::after {
@@ -254,6 +269,16 @@
             color: var(--professional-primary);
             margin-bottom: 20px;
             font-size: 1.3rem;
+            transition: color 0.3s ease;
+        }
+
+        /* Dark mode specific skills section fixes */
+        .dark-mode .skill-category h3 {
+            color: var(--professional-primary);
+        }
+
+        .dark-mode .skill-category h3 i {
+            color: var(--professional-primary);
         }
 
         .skill-tags {
@@ -349,6 +374,10 @@
             transform: translateY(-5px);
         }
 
+        .info-card h3 {
+            color: var(--text-color);
+        }
+
         .contact-links {
             display: flex;
             flex-direction: column;
@@ -374,6 +403,11 @@
             transform: translateX(5px);
         }
 
+        .dark-mode .contact-link {
+            background: #3a3a3a;
+            color: var(--text-color);
+        }
+
         .contact-link i {
             font-size: 1.2rem;
             width: 25px;
@@ -391,6 +425,10 @@
         .dark-mode .education-item {
             background: #3a3a3a;
             color: var(--text-color);
+        }
+
+        .education-item h4 {
+            color: var(--professional-primary);
         }
 
         /* Additional Info */
@@ -414,6 +452,75 @@
             margin-bottom: 10px;
         }
 
+        /* Fix spacing for info-card content */
+        .info-card h3 {
+            color: var(--professional-primary);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            transition: color 0.3s ease;
+        }
+
+        /* Make info-card headers look like skill-category headers */
+        .info-card h3 {
+            color: var(--professional-primary);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-card h3 i {
+            color: var(--professional-primary);
+            transition: color 0.3s ease;
+        }
+
+        /* Dark mode specific for info cards */
+        .dark-mode .info-card h3 {
+            color: var(--professional-primary);
+        }
+
+        .dark-mode .info-card h3 i {
+            color: var(--professional-primary);
+        }
+
+        .info-card p {
+            margin-top: 20px;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .info-card .tag-list {
+            margin-top: 20px;
+        }
+
+        /* Dark mode fixes for all info-card content */
+        .dark-mode .info-card p {
+            color: var(--text-color) !important;
+        }
+
+        .dark-mode .info-card {
+            color: var(--text-color) !important;
+        }
+
+        .dark-mode .info-card * {
+            color: var(--text-color);
+        }
+
+        /* Ensure tags inherit proper colors */
+        .info-card .tag {
+            color: var(--text-color);
+            background: var(--card-bg);
+            border: 1px solid #dee2e6;
+        }
+
+        .dark-mode .info-card .tag {
+            color: var(--text-color) !important;
+            background: var(--card-bg) !important;
+            border-color: #444 !important;
+        }
+
         .tag-list {
             display: flex;
             flex-wrap: wrap;
@@ -426,6 +533,13 @@
             border-radius: 15px;
             font-size: 0.9rem;
             border: 1px solid #dee2e6;
+            color: var(--text-color);
+        }
+
+        .dark-mode .tag {
+            background: #3a3a3a !important;
+            border-color: #444 !important;
+            color: #eaeaea !important;
         }
 
         /* Scroll Animation */
@@ -491,77 +605,22 @@
             transition: all 0.3s ease;
             margin-top: 20px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
+        }
 
         .btn-resume:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
+        }
+
         .tech-tag {
             display: inline-block;
-            background-color: #3498db;   /* red background */
-            color: #fff;                 /* white text */
+            background-color: #3498db;
+            color: #fff;
             padding: 5px 12px;
             margin: 4px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 500;
-}
-
-
-        /* Dark mode specific styles */
-        .dark-mode .contact-link {
-            background: #3a3a3a;
-            color: var(--text-color);
-        }
-
-        .dark-mode .tag {
-            background: var(--card-bg);
-            border-color: #444;
-        }
-
-        /* Fix education panel background in dark mode */
-        .dark-mode .info-card > div > div {
-            background: #3a3a3a !important;
-            color: var(--text-color) !important;
-        }
-
-        .dark-mode .info-card h4 {
-            color: var(--text-color) !important;
-        }
-
-        .dark-mode .info-card p {
-            color: var(--text-color) !important;
-        }
-
-        /* Fix navigation visibility */
-        .dark-mode .nav-btn {
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .dark-mode .nav-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
-            color: white;
-        }
-
-        /* Fix additional info sections in dark mode */
-        .dark-mode .additional-info {
-            background: var(--section-bg) !important;
-            color: var(--text-color) !important;
-        }
-
-        .dark-mode .info-item h4 {
-            color: #7fb3d3 !important;
-        }
-
-        .dark-mode .info-item p {
-            color: var(--text-color) !important;
-        }
-
-        .dark-mode .info-item div {
-            color: var(--text-color) !important;
         }
     </style>
 </head>
@@ -580,9 +639,10 @@
         
         <div class="hero-content">
             <h1>Irfaan Ahamed</h1>
-            <p class="subtitle">Full Stack Developer & Prompt Engineer</p>
+            <p class="subtitle">Full Stack Developer • UI/UX Designer • Prompt Engineer</p>
             <p class="description">
-               Aspiring Full-Stack Developer skilled in Java, Spring Boot, and modern web technologies, with added proficiency in Prompt Engineering and Generative AI. Passionate about building scalable, user-focused applications that merge full-stack solutions with AI-driven innovation, while embracing clean code practices, continuous learning, and collaboration.
+                Aspiring Full-Stack Developer and UI/UX Designer skilled in Java, Spring Boot, MySQL, and modern web technologies, with added proficiency in Prompt Engineering and Generative AI. Passionate about building scalable, user-focused applications that combine robust backend development, intuitive design, and AI-driven innovation, while embracing clean code practices, continuous learning, and collaboration.
+            </p>
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">
                     <i class="fas fa-code"></i>
@@ -596,40 +656,78 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="section" id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category fade-in">
-                <h3><i class="fas fa-server"></i> Backend Development</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">Spring Boot</span>
-                    <span class="skill-tag">Python</span>
-                </div>
+<!-- Skills Section -->
+<section class="section" id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+        
+        <div class="skill-category fade-in">
+            <h3><i class="fas fa-code"></i> Languages</h3>
+            <div class="skill-tags">
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Python</span>
             </div>
-            
-            <div class="skill-category fade-in">
-                <h3><i class="fas fa-laptop-code"></i> Frontend Development</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">HTML</span>
-                    <span class="skill-tag">CSS</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">Bootstrap</span>
-                    <span class="skill-tag">React</span>
-                </div>
+        </div>
+        
+        <div class="skill-category fade-in">
+            <h3><i class="fas fa-cubes"></i> Frameworks</h3>
+            <div class="skill-tags">
+                <span class="skill-tag">Spring Boot</span>
+                <span class="skill-tag">Bootstrap</span>
             </div>
-            
-            <div class="skill-category fade-in">
-                <h3><i class="fas fa-database"></i> Database</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">PostgreSQL</span>
-                </div>
+        </div>
+        
+        <div class="skill-category fade-in">
+            <h3><i class="fas fa-database"></i> Database</h3>
+            <div class="skill-tags">
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">PostgreSQL</span>
             </div>
         </div>
 
-        <!-- Certificates Section -->
+        <div class="skill-category fade-in">
+            <h3><i class="fas fa-laptop-code"></i> Web / Frontend</h3>
+            <div class="skill-tags">
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">React</span>
+            </div>
+        </div>
+
+        <div class="skill-category fade-in">
+            <h3><i class="fas fa-pencil-ruler"></i> UI / UX Design</h3>
+            <div class="skill-tags">
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Adobe XD</span>
+                <span class="skill-tag">Wireframing</span>
+                <span class="skill-tag">Prototyping</span>
+            </div>
+        </div>
+
+        <div class="skill-category fade-in">
+            <h3><i class="fas fa-brain"></i> AI / Prompt Engineering</h3>
+            <div class="skill-tags">
+                <span class="skill-tag">Prompt Generation</span>
+                <span class="skill-tag">Prompt Optimization</span>
+                <span class="skill-tag">Generative AI</span>
+            </div>
+        </div>
+
+        <div class="skill-category fade-in">
+            <h3><i class="fas fa-tools"></i> Build Tools</h3>
+            <div class="skill-tags">
+                <span class="skill-tag">GitHub</span>
+                <span class="skill-tag">MySQL Workbench</span>
+                <span class="skill-tag">pgAdmin</span>
+                <span class="skill-tag">Eclipse IDE</span>
+                <span class="skill-tag">Visual Studio Code</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certificates Section -->
         <section class="section" id="certificates">
             <h2>Certificates</h2>
             <div class="projects-grid">
@@ -675,9 +773,9 @@
                 
 
                 <div class="project-card fade-in">
-                    <div class="project-header"><h3>Python 101 for Data Science - IBM</h3></div>
+                    <div class="project-header"><h3>Python 101 - IBM</h3></div>
                     <div class="project-content">
-                        <p>Introductory Python certification by IBM for Data Science.</p>
+                        <p>Introductory Python certification by IBM.</p>
                         <a href="https://courses.etrain.skillsnetwork.site/certificates/0a5e2882c8154560b119ead0cdef6d4c" target="_blank" class="btn-certificate">
                             <i class="fas fa-certificate"></i> View Certificate
                         </a>
@@ -723,60 +821,52 @@
                         </a>
                     </div>
                 </div>
+
+
+                <div class="project-card fade-in">
+    <div class="project-header"><h3>UI/UX Designing for Beginners - SimpliLearn</h3></div>
+    <div class="project-content">
+        <p>Certified in the fundamentals of UI/UX design, covering user-centered design principles, wireframing, and prototyping.</p>
+        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI0OTE5IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODk3NDMwNV85MjI4MDYyMTc1NzgzMjI5MTk2MC5wbmciLCJ1c2VybmFtZSI6IklyZmFhbiBBaGFtZWQifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F7910%2FUI%252FUX%2520for%2520Beginners%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1413879721585198979&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVL6gMt3B0Mc5yDU%2ByrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDAB23piNBAAAA" 
+           target="_blank" class="btn-certificate">
+            <i class="fas fa-certificate"></i> View Certificate
+        </a>
+    </div>
+</div>
+
+<div class="project-card fade-in">
+    <div class="project-header"><h3>Introduction to Graphic Design & UI/UX Basics - SimpliLearn</h3></div>
+    <div class="project-content">
+        <p>Certified in graphic design fundamentals and UI/UX basics, including design principles, typography, and visual hierarchy.</p>
+        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIzNDA1IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODk3NDMxMF85MjI4MDYyMTc1NzgyNjI4NTMwOS5wbmciLCJ1c2VybmFtZSI6IklyZmFhbiBBaGFtZWQifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F6307%2FIntroduction%2520to%2520Graphic%2520Design%253B%2520Basics%2520of%2520UI%252FUX%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1413879721585198979&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVT%2FQszQgqDkp2DU%2ByrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDAKgzGV9BAAAA" 
+           target="_blank" class="btn-certificate">
+            <i class="fas fa-certificate"></i> View Certificate
+        </a>
+    </div>
+</div>
+
             </div>
         </section>
         
-        <div class="additional-info fade-in">
+        
+        <!-- Achievements Section -->
+        <section class="section" id="achievements">
             <h2>Achievements</h2>
-            <div class="info-item">
-                <div>
-                    <h4>Finalist – Soft Logic Academy (Codeathon Event)</h4>
+            <div class="info-grid">
+                <div class="info-card fade-in">
+                    <h3><i class="fas fa-trophy"></i> Finalist – Soft Logic Academy (Codeathon Event)</h3>
                     <p>• Participated in a codeathon solving real-world problems using frontend technologies and MySQL.<br>
-                        • Collaborated in a team to develop a working prototype within a month.</p><br>
-                    <h4>Participant & Winner – Web 'O' Spider (Hindustan University)</h4>
+                        • Collaborated in a team to develop a working prototype within a month.</p>
+                </div>
+                
+                <div class="info-card fade-in">
+                    <h3><i class="fas fa-award"></i> Participant & Winner – Web 'O' Spider (Hindustan University)</h3>
                     <p>• Developed a responsive UI in under 1 hour during the technical event.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="additional-info fade-in">
-            <h2>Additional Information</h2>
-            <div class="info-row">
-                <div class="info-item">
-                    <h4><i class="fas fa-user-tie"></i> Soft Skills</h4>
-                    <div class="tag-list">
-                        <span class="tag">Communication</span>
-                        <span class="tag">Problem Solving</span>
-                        <span class="tag">Analytical Thinking</span>
-                        <span class="tag">Teamwork</span>
-                        <span class="tag">Time Management</span>
-                        <span class="tag">Adaptability</span>
-                    </div>
-                </div>
-                
-                <div class="info-item">
-                    <h4><i class="fas fa-heart"></i> Hobbies</h4>
-                    <div class="tag-list">
-                        <span class="tag">Gymming</span>
-                        <span class="tag">Biking</span>
-                        <span class="tag">Gaming</span>
-                        <span class="tag">Music</span>
-                        <span class="tag">Reading</span>
-                    </div>
-                </div>
-                
-                <div class="info-item">
-                   <h4><i class="fas fa-language"></i> Languages</h4>
-                    <div class="tag-list">
-                        <span class="tag">English</span>
-                        <span class="tag">Tamil</span>
-                        <span class="tag">Hindi</span>
-                        <span class="tag">Urdu</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        
 
 <!-- Projects Section -->
 <section class="section" id="projects">
@@ -799,9 +889,7 @@
         <div class="skill-tags" style="margin-top: 15px;">
           <span class="skill-tag">Automation</span>
           <span class="skill-tag">Data Logging</span>
-
         </div>
-        
       </div>
     </div>
 
@@ -820,9 +908,7 @@
         <div class="skill-tags" style="margin-top: 15px;">
           <span class="skill-tag">Web Platform</span>
           <span class="skill-tag">Service Management</span>
-
         </div>
-        
       </div>
     </div>
 
@@ -842,7 +928,6 @@
           <span class="skill-tag">Story Sharing</span>
           <span class="skill-tag">Location Based</span>
         </div>
-        
       </div>
     </div>
 
@@ -862,25 +947,63 @@
           <span class="skill-tag">Productivity Tool</span>
           <span class="skill-tag">Task Management</span>
         </div>
-       
       </div>
     </div>
 
   </div>
 </section>
 
+<!-- Additional Information Section -->
+        <section class="section" id="additional-info">
+            <h2>Additional Information</h2>
+            <div class="info-grid">
+                <div class="info-card fade-in">
+                    <h3><i class="fas fa-user-tie"></i> Soft Skills</h3>
+                    <div class="tag-list">
+                        <span class="tag">Communication</span>
+                        <span class="tag">Problem Solving</span>
+                        <span class="tag">Analytical Thinking</span>
+                        <span class="tag">Teamwork</span>
+                        <span class="tag">Time Management</span>
+                        <span class="tag">Adaptability</span>
+                    </div>
+                </div>
+                
+                <div class="info-card fade-in">
+                    <h3><i class="fas fa-heart"></i> Hobbies</h3>
+                    <div class="tag-list">
+                        <span class="tag">Gymming</span>
+                        <span class="tag">Biking</span>
+                        <span class="tag">Gaming</span>
+                        <span class="tag">Music</span>
+                        <span class="tag">Reading</span>
+                        <span class="tag">Sports</span>
+                    </div>
+                </div>
+                
+                <div class="info-card fade-in">
+                   <h3><i class="fas fa-language"></i> Languages</h3>
+                    <div class="tag-list">
+                        <span class="tag">English</span>
+                        <span class="tag">Tamil</span>
+                        <span class="tag">Hindi</span>
+                        <span class="tag">Urdu</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
 
     <!-- Resume Section -->
 <section class="section" id="resume" style="text-align: center; padding: 40px 0;">
     <h2>Download My Resume</h2>
     <p>You can download my latest resume by clicking the button below.</p>
-    <a href="https://drive.google.com/uc?export=download&id=1p7z3AfXOZQikZ0hNS_2TEih743jlrDfS" 
+    <a href="https://drive.google.com/uc?export=download&id=1qbWyhRK_X-YIdoQGOd5JSXOSg5Hxzb9q" 
        download 
        class="btn-resume">
        <i class="fas fa-download"></i> Download Resume
     </a>
 </section>
-
 
     <!-- Education & Contact Section -->
     <section class="section" id="contact">
@@ -1004,4 +1127,3 @@
     </script>
 </body>
 </html>
-
