@@ -308,6 +308,20 @@
             margin-top: 3rem;
         }
 
+        /* layout only for Projects Section */
+        #projects .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns */
+            gap: 40px;
+            justify-content: center; /* center align */
+        }
+
+        @media (max-width: 768px) {
+        #projects .projects-grid {
+        grid-template-columns: 1fr; /* stack on mobile */
+            }
+        }
+
         .project-card {
             background: var(--card-bg);
             border-radius: 15px;
@@ -724,12 +738,21 @@
                 <span class="skill-tag">Visual Studio Code</span>
             </div>
         </div>
+
+        <div class="skill-category fade-in">
+            <h3><i class="fas fa-cloud"></i> Cloud Basics</h3>
+            <div class="skill-tags">
+                <span class="skill-tag">Cloud SQL</span>
+                <span class="skill-tag">Google Cloud Platform (GCP)</span>
+
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- Certificates Section -->
         <section class="section" id="certificates">
-            <h2>Certificates</h2>
+            <h2>Certifications</h2>
             <div class="projects-grid">
                 <div class="project-card fade-in">
                     <div class="project-header"><h3>Full Stack Developer - SoftLogic</h3></div>
@@ -822,6 +845,17 @@
                     </div>
                 </div>
 
+<div class="project-card fade-in">
+    <div class="project-header"><h3>Generative AI for Software Developers - IBM</h3></div>
+    <div class="project-content">
+        <p>Certified by IBM in leveraging Generative AI tools, including prompt engineering, code generation, and integration of large language models to enhance software development workflows.</p>
+        <a href="https://courses.etrain.skillsnetwork.site/certificates/a92d76d529c84cecbcfbb66c69a84a55" 
+           target="_blank" class="btn-certificate">
+            <i class="fas fa-certificate"></i> View Certificate
+        </a>
+    </div>
+</div>
+
 
                 <div class="project-card fade-in">
     <div class="project-header"><h3>UI/UX Designing for Beginners - SimpliLearn</h3></div>
@@ -875,11 +909,23 @@
     
     <div class="project-card fade-in">
       <div class="project-header">
-        <h3><i class="fas fa-dumbbell"></i> Fitness Tracker Bot</h3>
+        <h3><i class="fas fa-dumbbell"></i> GOFIT - Fitness Tracker ChatBot</h3>
       </div>
       <div class="project-content">
-        <p>Developed a comprehensive Fitness Tracker Bot to monitor physical activity, calorie intake, and workout progress using automated prompts and real-time data logging. Features intelligent tracking and progress analytics.</p>
-        
+        <p>
+GoFit is an interactive fitness chatbot designed to provide personalized health and wellness assistance. It answers fitness-related questions, suggests customized diet and workout plans, and offers guidance on water intake, nutrient balance, macros, and micronutrients. The chatbot acts as a virtual fitness companion, making health management more accessible and engaging.</p>
+<p>
+<b>Key Features:</b></p>
+<span>💬 Fitness Q&A – Responds to user queries on exercises, nutrition, and lifestyle.</span>
+<span>🍎 Diet Planning – Generates tailored meal plans with macro & micro nutrient breakdowns.</span>
+<span>🏋️ Workout Suggestions – Recommends personalized exercise routines.</span>
+<span>💧 Wellness Guidance – Provides hydration and nutrient tracking tips.</span>
+<span>⚡ Streamlit-powered UI – Clean and intuitive interface for smooth user experience.</span>
+
+<p><b>Built using:</b></p>
+
+
+
         <div class="skill-tags">
           <span class="tech-tag">Python</span>
           <span class="tech-tag">Streamlit</span>
@@ -898,10 +944,19 @@
         <h3><i class="fas fa-tools"></i> SERVZO</h3>
       </div>
       <div class="project-content">
-        <p>SERVZO is a web-based platform designed to connect local service providers with customers seamlessly. It enables providers to showcase their services and manage bookings, while customers can easily find and hire trusted professionals.</p>
+        <p>Servzo is a web-based platform that connects local service providers with customers in need of everyday services. From home repairs to personal care, the application bridges the gap between service seekers and providers, ensuring convenience, trust, and efficiency in local service discovery and booking.</p>
+        <p><b>Key Features</b></p>
+        <span>🔍 Service Discovery – Users can browse and search for service providers in their area.</span>
+        <span>📝 Booking System – Customers can schedule and book services directly through the platform.</span>
+        <span>👨‍🔧 Provider Profiles – Service providers can create and manage detailed profiles.</span>
+        <span>⭐ Ratings & Reviews – Customers can leave feedback, improving trust and credibility.</span>
+        <span>📊 Database Integration – MySQL database ensures secure data storage and fast retrieval.</span>
+        <p><b>Built using:</b></p>
         <div class="skill-tags">
           <span class="tech-tag">MySql</span>
-          <span class="tech-tag">HTML&CSS</span>
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">JavaScript</span>
           <span class="tech-tag">Bootstrap</span>
           <span class="tech-tag">PHP</span>
         </div><br>
@@ -914,15 +969,28 @@
 
     <div class="project-card fade-in">
       <div class="project-header">
-        <h3><i class="fas fa-map-marker-alt"></i> Memories - Location-Based Story Sharing Web</h3>
+        <h3><i class="fas fa-map-marker-alt"></i> MEMORIES - Location-Based Story Sharing Web</h3>
       </div>
-      <div class="project-content">
-        <p>Memories is a full-stack web application that allows users to share and pin personal stories to specific geographic locations on an interactive map.</p>
+<div class="project-content">
+        <p>
+    Memories is a full-stack web application that enables users to share and pin their personal stories on an interactive map. By combining geolocation features with social storytelling, the platform creates a visual diary where users can explore and revisit moments tied to specific locations.</p>
+    <b>Key Features:</b></p>
+    <span>🗺 Interactive Map Integration – Users can tag and view stories based on location.</span>
+    <span>📝 Personal Story Sharing – Secure CRUD operations for posting, updating, and managing stories.</span>
+    <span>⚡ Real-time Engagement – Instant story retrieval and sharing for an interactive experience.</span>
+    <span>🎨 User-friendly UI – Intuitive navigation with a clean, responsive Bootstrap design.</span>
+    <span>🔐 Scalable Backend – Spring Boot and MySQL power the backend with optimized performance and security.</span>
+
+        <p><b>Built using:</b></p>
         <div class="skill-tags">
           <span class="tech-tag">Java</span>
           <span class="tech-tag">MySql</span>
           <span class="tech-tag">SpringBoot</span>
           <span class="tech-tag">Leaflet</span>
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">JavaScript</span>
+
         </div><br>
         <div class="skill-tags" style="margin-top: 15px;">
           <span class="skill-tag">Story Sharing</span>
@@ -933,14 +1001,24 @@
 
     <div class="project-card fade-in">
       <div class="project-header">
-        <h3><i class="fas fa-tasks"></i> Task Tracker</h3>
+        <h3><i class="fas fa-tasks"></i> TASK TRACKER</h3>
       </div>
       <div class="project-content">
-        <p>A task management tool that lets users add, complete, and delete to-dos – ideal for boosting productivity and organizing daily work.</p>
+        <p>Task Tracker is a full-stack web application designed to help users manage their daily to-dos efficiently. With features for task creation, updates, and deletion, the app provides a clean and responsive interface to boost productivity. Real-time progress tracking ensures users can stay on top of their priorities effortlessly.</p>
+        <b>Key Features:</b></p>
+        <span>📝 Task Management – Add, update, and delete tasks seamlessly.</span>
+        <span>⏳ Real-Time Tracking – Track task completion with live updates.</span>
+        <span>🎨 Responsive UI – User-friendly interface built with Bootstrap for smooth navigation.</span>
+        <span>🔐 Secure Backend – Spring Boot and MySQL for robust CRUD operations and data storage.</span>
+        <span>⚡ Optimized Performance – Fast and scalable backend ensuring reliability.</span>
+        <span>📊 Task Prioritization – Users can set priority levels (High, Medium, Low) to stay focused on important tasks.</span>
+        <p><b>Built using:</b></p>
          <div class="skill-tags">
-          <span class="tech-tag">JS</span>
+          <span class="tech-tag">JavaScript</span>
           <span class="tech-tag">SpringBoot</span>
-          <span class="tech-tag">HTML&CSS</span>
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">Bootstrap</span>
           <span class="tech-tag">Java</span>
         </div><br>
         <div class="skill-tags" style="margin-top: 15px;">
@@ -960,34 +1038,34 @@
                 <div class="info-card fade-in">
                     <h3><i class="fas fa-user-tie"></i> Soft Skills</h3>
                     <div class="tag-list">
-                        <span class="tag">Communication</span>
-                        <span class="tag">Problem Solving</span>
-                        <span class="tag">Analytical Thinking</span>
-                        <span class="tag">Teamwork</span>
-                        <span class="tag">Time Management</span>
-                        <span class="tag">Adaptability</span>
+                        <span class="tech-tag">Communication</span>
+                        <span class="tech-tag">Problem Solving</span>
+                        <span class="tech-tag">Analytical Thinking</span>
+                        <span class="tech-tag">Teamwork</span>
+                        <span class="tech-tag">Time Management</span>
+                        <span class="tech-tag">Adaptability</span>
                     </div>
                 </div>
                 
                 <div class="info-card fade-in">
                     <h3><i class="fas fa-heart"></i> Hobbies</h3>
                     <div class="tag-list">
-                        <span class="tag">Gymming</span>
-                        <span class="tag">Biking</span>
-                        <span class="tag">Gaming</span>
-                        <span class="tag">Music</span>
-                        <span class="tag">Reading</span>
-                        <span class="tag">Sports</span>
+                        <span class="tech-tag">Fitness</span>
+                        <span class="tech-tag">Biking</span>
+                        <span class="tech-tag">Gaming</span>
+                        <span class="tech-tag">Music</span>
+                        <span class="tech-tag">Reading</span>
+                        <span class="tech-tag">Sports</span>
                     </div>
                 </div>
                 
                 <div class="info-card fade-in">
                    <h3><i class="fas fa-language"></i> Languages</h3>
                     <div class="tag-list">
-                        <span class="tag">English</span>
-                        <span class="tag">Tamil</span>
-                        <span class="tag">Hindi</span>
-                        <span class="tag">Urdu</span>
+                        <span class="tech-tag">English</span>
+                        <span class="tech-tag">Tamil</span>
+                        <span class="tech-tag">Hindi</span>
+                        <span class="tech-tag">Urdu</span>
                     </div>
                 </div>
             </div>
