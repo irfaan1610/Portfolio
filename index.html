@@ -3,1204 +3,3019 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Irfaan Ahamed - Full Stack Developer</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <meta name="description" content="Irfaan Ahamed - Full Stack Developer, UI/UX Designer & Graphic Designer with expertise in Java, Spring Boot, React, and AI-driven applications. Explore my portfolio, certifications, and projects.">
+    <meta name="keywords" content="Full Stack Developer, UI/UX Designer, Graphic Designer, Java, Spring Boot, React, Portfolio">
+    <meta property="og:title" content="Irfaan Ahamed - Full Stack Developer & Designer Portfolio">
+    <meta property="og:description" content="Explore the portfolio of Irfaan Ahamed featuring full-stack projects, UI/UX designs, and AI innovations.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Irfaan Ahamed - Full Stack Developer & Designer</title>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js" defer></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.png" sizes="32x32">
+    <link rel="icon" href="assets/images/favicon.png" sizes="48x48">
+    <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
     <style>
+        
         :root {
-            --bg-color: #ffffff;
-            --text-color: #333333;
-            --card-bg: #ffffff;
-            --accent-gradient: linear-gradient(135deg, #2c3e50, #34495e);
-            --section-bg: #f8f9fa;
-            --professional-primary: #2c3e50;
-            --professional-secondary: #34495e;
+            /* Core Colors - Modern Professional Palette */
+            --bg-page: #0a0a0a;
+            --bg-card: #1a1a1a;
+            --bg-card-hover: #252525;
+            --bg-light: #f5f5f5;
+            
+            /* Text Colors */
+            --text-primary: #d9fb06;
+            --text-secondary: #a0a0a0;
+            --text-muted: #666666;
+            --text-inverse: #0a0a0a;
+            --text-light: #ffffff;
+            
+            /* Border Colors */
+            --border-color: rgba(217, 251, 6, 0.2);
+            --border-strong: rgba(217, 251, 6, 0.4);
+            
+            /* Brand Colors */
+            --brand-primary: #d9fb06;
+            --brand-hover: rgba(217, 251, 6, 0.85);
+            --brand-active: rgba(217, 251, 6, 0.7);
+            
+            /* Accent Options */
+            --accent-professional: #d9fb06;
+            --accent-creative: #00d4ff;
+            --accent-minimal: #ffffff;
+            
+            /* Spacing */
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 24px;
+            --space-lg: 40px;
+            --space-xl: 60px;
+            --space-2xl: 80px;
+            
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-pill: 100px;
+            
+            /* Transitions */
+            --transition-fast: 0.15s ease;
+            --transition-base: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+        
+        /* Light Mode */
+        body.light-mode {
+            --bg-page: #ffffff;
+            --bg-card: #f8f8f8;
+            --bg-card-hover: #efefef;
+            --text-primary: #0a0a0a;
+            --text-secondary: #4a4a4a;
+            --text-muted: #888888;
+            --text-light: #0a0a0a;
+            --border-color: rgba(10, 10, 10, 0.1);
+            --border-strong: rgba(10, 10, 10, 0.2);
+        }
+        
+        body.light-mode .brand-accent {
+            color: #0a0a0a !important;
+        }
+        
+        body.light-mode .btn-primary {
+            background: #d9fb06;
+            color: #0a0a0a;
+        }
+        
+        body.light-mode .accent-minimal {
+            display: none;
         }
 
-        .dark-mode {
-            --bg-color: #1e1e1e;
-            --text-color: #eaeaea;
-            --card-bg: #2a2a2a;
-            --accent-gradient: linear-gradient(135deg, #2c3e50, #34495e);
-            --section-bg: #121212;
-            --professional-primary: #7fb3d3;
-            --professional-secondary: #5a9fd4;
-        }
-
+        
+        /* ========== BASE STYLES ========== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: var(--font-primary);
+            background: var(--bg-page);
+            color: var(--text-light);
             line-height: 1.6;
-            background: var(--bg-color);
-            color: var(--text-color);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
-            transition: all 0.3s ease;
         }
-
-        /* Navigation */
+        
+        /* ========== SKIP LINK ========== */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            background: var(--brand-primary);
+            color: var(--text-inverse);
+            padding: var(--space-sm) var(--space-md);
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 10000;
+            border-radius: 0 0 var(--radius-sm) 0;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+            outline: 3px solid var(--brand-primary);
+        }
+        
+        /* ========== NAVIGATION ========== */
         .nav {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .nav-btn {
-            padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.9);
-            color: #333;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
-            font-size: 0.9rem;
-            font-weight: 500;
+            padding: var(--space-sm) 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            transition: background var(--transition-base);
         }
-
-        .nav-btn:hover {
-            background: rgba(255, 255, 255, 1);
-            color: #333;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        
+        body.light-mode .nav {
+            background: rgba(255, 255, 255, 0.95);
         }
-
-        /* Dark mode navigation fix */
-        .dark-mode .nav-btn {
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .dark-mode .nav-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
-            color: white;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            flex-direction: column;
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--brand-primary);
+            text-decoration: none;
+            transition: opacity var(--transition-fast);
+        }
+        .nav-logo-img {
+            height: 36px;
+            width: auto;
+            display: block;
+}
+
+        .nav-logo:hover {
+            opacity: 0.85;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--space-md);
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast);
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--brand-primary);
+            background: rgba(217, 251, 6, 0.1);
+        }
+        
+        .nav-link:focus {
+            outline: 2px solid var(--brand-primary);
+            outline-offset: 2px;
+        }
+        
+        /* Theme Controls */
+        .theme-controls {
+            display: flex;
+            gap: var(--space-sm);
+            align-items: center;
+        }
+        
+        .theme-toggle, .accent-toggle {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .theme-toggle:hover, .accent-toggle:hover {
+            border-color: var(--brand-primary);
+            color: var(--brand-primary);
+            transform: translateY(-2px);
+        }
+        
+        .accent-swatches {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: var(--space-xs);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: var(--space-sm);
+            gap: var(--space-xs);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .accent-swatches.active {
+            display: flex;
+        }
+        
+        .accent-swatch {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all var(--transition-fast);
+        }
+        
+        .accent-swatch:hover {
+            transform: scale(1.1);
+            border-color: var(--text-light);
+        }
+        
+        .accent-swatch.active {
+            border-color: var(--text-light);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+        }
+        
+        .accent-professional { background: #d9fb06; }
+        .accent-creative { background: #00d4ff; }
+        .accent-minimal { background: #ffffff; }
+        
+        /* Mobile Menu Toggle */
+        .nav-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: var(--space-xs);
+        }
+        
+        /* ========== HERO SECTION ========== */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: var(--space-2xl) var(--space-lg);
             position: relative;
             overflow: hidden;
-            padding: 80px 20px;
         }
-
-        #tsparticles {
+        
+        .hero-background {
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(217, 251, 6, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(217, 251, 6, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+            position: relative;
             z-index: 1;
         }
-
-        .hero-content {
-            text-align: center;
-            color: white;
-            z-index: 2;
-            position: relative;
-            max-width: 800px;
-            padding: 0 20px;
+        
+        
+        .hero-content h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: var(--space-md);
+            color: var(--text-light);
         }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            opacity: 0;
-            animation: slideUp 1s ease-out 0.5s forwards;
+        
+        .brand-accent {
+            color: var(--brand-primary);
         }
-
-        .hero .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: slideUp 1s ease-out 0.8s forwards;
+        
+        .hero-content .subtitle {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+            font-weight: 500;
         }
-
-        .hero .description {
+        
+        .hero-content .description {
             font-size: 1.1rem;
-            margin-bottom: 3rem;
-            opacity: 0;
-            animation: slideUp 1s ease-out 1.1s forwards;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--space-lg);
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+        }
+        
+        /* Profile Card */
+        .profile-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(217, 251, 6, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;   
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-md);
+            position: relative;
+        }
+        
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        @keyframes slideUp {
+        .profile-info {
+            text-align: center;
+        }
+        
+        .profile-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-xs);
+            color: var(--text-light);
+        }
+        
+        .profile-info p {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+        }
+        
+        .profile-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--brand-primary);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* ========== BUTTONS ========== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: 14px 28px;
+            border-radius: var(--radius-pill);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            border: none;
+            font-family: var(--font-primary);
+        }
+        
+        .btn-primary {
+            background: var(--brand-primary);
+            color: var(--text-inverse);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(217, 251, 6, 0.3);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--brand-primary);
+            border: 2px solid var(--brand-primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--brand-primary);
+            color: var(--text-inverse);
+            transform: translateY(-2px);
+        }
+        
+        .btn:focus {
+            outline: 3px solid var(--brand-primary);
+            outline-offset: 3px;
+        }
+        
+        /* ========== SECTIONS ========== */
+        .section {
+            padding: var(--space-2xl) var(--space-lg);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+        
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: var(--space-sm);
+            color: var(--text-light);
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* ========== SKILLS SECTION ========== */
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: start;
+        }
+        
+        .skills-grid {
+    display: grid;
+
+    gap: var(--space-lg);
+}
+
+
+        
+        .skill-category {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            transition: all var(--transition-base);
+        }
+        
+        .skill-category:hover {
+            border-color: var(--brand-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: var(--space-md);
+            color: var(--brand-primary);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+        }
+        
+        .skill-tag {
+            background: rgba(217, 251, 6, 0.1);
+            color: var(--text-light);
+            padding: 6px 14px;
+            border-radius: var(--radius-pill);
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-fast);
+        }
+        
+        .skill-tag:hover {
+            background: var(--brand-primary);
+            color: var(--text-inverse);
+            transform: scale(1.05);
+        }
+        
+        .skills-chart-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            position: sticky;
+            top: 100px;
+        }
+        
+        .skills-chart-container h3 {
+            text-align: center;
+            margin-bottom: var(--space-md);
+            color: var(--text-light);
+        }
+        
+        #skillsChart {
+            max-height: 400px;
+        }
+        
+        /* ========== PROJECTS SECTION ========== */
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: var(--bg-card);
+            color: var(--text-light);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: var(--radius-pill);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-weight: 500;
+        }
+        
+        .filter-btn:hover {
+            border-color: var(--brand-primary);
+            color: var(--brand-primary);
+        }
+        
+        .filter-btn.active {
+            background: var(--brand-primary);
+            color: var(--text-inverse);
+            border-color: var(--brand-primary);
+        }
+        
+        .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+    width: 100%;
+}
+
+        
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all var(--transition-base);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--brand-primary);
+        }
+        
+        .project-card.hidden {
+            display: none;
+        }
+        
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, rgba(217, 251, 6, 0.2), rgba(136, 204, 0, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--brand-primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(10, 10, 10, 0.5) 100%);
+        }
+        
+        .project-content {
+            padding: var(--space-md);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-sm);
+            color: var(--text-light);
+        }
+        
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+            line-height: 1.6;
+            flex: 1;
+        }
+        
+        .project-features {
+            margin-bottom: var(--space-md);
+        }
+        
+        .project-features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .project-features li {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-xs);
+            display: flex;
+            align-items: start;
+            gap: var(--space-xs);
+            font-size: 0.95rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-md);
+        }
+        
+        .tech-tag {
+            background: rgba(217, 251, 6, 0.15);
+            color: var(--brand-primary);
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .project-actions {
+            display: flex;
+            gap: var(--space-sm);
+            margin-top: auto;
+        }
+        
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+        
+        /* ========== CERTIFICATES SECTION ========== */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-md);
+        }
+        
+        .certificate-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            transition: all var(--transition-base);
+        }
+        
+        .certificate-card:hover {
+            border-color: var(--brand-primary);
+            transform: translateY(-2px);
+        }
+        
+        .certificate-header {
+            display: flex;
+            align-items: start;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .certificate-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(217, 251, 6, 0.15);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-primary);
+            flex-shrink: 0;
+        }
+        
+        .certificate-card h3 {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+        
+        .certificate-issuer {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .certificate-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-sm);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .certificate-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-base);
+        }
+        
+        .certificate-details.expanded {
+            max-height: 200px;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .certificate-actions {
+            display: flex;
+            gap: var(--space-sm);
+        }
+        
+        .btn-link {
+            color: var(--brand-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all var(--transition-fast);
+        }
+        
+        .btn-link:hover {
+            opacity: 0.8;
+            gap: 8px;
+        }
+        
+        .btn-expand {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: all var(--transition-fast);
+        }
+        
+        .btn-expand:hover {
+            color: var(--brand-primary);
+        }
+        
+        /* ========== ACHIEVEMENTS SECTION ========== */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .achievement-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            border-left: 4px solid var(--brand-primary);
+        }
+        
+        .achievement-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-sm);
+            color: var(--text-light);
+        }
+        
+        .achievement-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .achievement-card li {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-xs);
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .achievement-card li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--brand-primary);
+            font-weight: bold;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        
+        /* ========== ADDITIONAL INFO SECTION ========== */
+        .additional-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+        }
+        
+        .info-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: var(--space-md);
+            color: var(--brand-primary);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+        
+        .info-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+        }
+        
+        .info-tag {
+            background: rgba(217, 251, 6, 0.1);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: var(--radius-pill);
+            font-size: 0.95rem;
+        }
+        
+        /* ========== RESUME SECTION ========== */
+        .resume-section {
+            text-align: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+        }
+        
+        .resume-section h2 {
+            font-size: 2rem;
+            margin-bottom: var(--space-md);
+            color: var(--text-light);
+        }
+        
+        .resume-section p {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .resume-actions {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* ========== CONTACT SECTION ========== */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+        }
+        
+        .contact-info {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-md);
+            color: var(--text-light);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: start;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+            padding: var(--space-md);
+            background: rgba(217, 251, 6, 0.05);
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast);
+        }
+        
+        .contact-item:hover {
+            background: rgba(217, 251, 6, 0.1);
+        }
+        
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(217, 251, 6, 0.15);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-primary);
+            flex-shrink: 0;
+        }
+        
+        .contact-details h4 {
+            color: var(--text-light);
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        
+        .contact-details p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        .contact-details a {
+            color: var(--brand-primary);
+            text-decoration: none;
+            transition: opacity var(--transition-fast);
+        }
+        
+        .contact-details a:hover {
+            opacity: 0.8;
+        }
+        
+        .copy-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all var(--transition-fast);
+            margin-top: 4px;
+        }
+        
+        .copy-btn:hover {
+            border-color: var(--brand-primary);
+            color: var(--brand-primary);
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+        }
+        
+        .contact-form h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-md);
+            color: var(--text-light);
+        }
+        
+        .form-group {
+            margin-bottom: var(--space-md);
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: var(--space-xs);
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-page);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            color: var(--text-light);
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            transition: all var(--transition-fast);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--brand-primary);
+            box-shadow: 0 0 0 3px rgba(217, 251, 6, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            gap: var(--space-lg);
+        }
+        
+        .education-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            border-left: 4px solid var(--brand-primary);
+        }
+        
+        .education-card h4 {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: var(--space-xs);
+        }
+        
+        .education-institution {
+            color: var(--brand-primary);
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .education-details {
+            color: var(--text-secondary);
+        }
+        
+        /* ========== MODAL ========== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-md);
+            backdrop-filter: blur(4px);
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .modal-header {
+            padding: var(--space-lg);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: var(--bg-card);
+            z-index: 10;
+        }
+        
+        .modal-header h2 {
+            font-size: 2rem;
+            color: var(--text-light);
+        }
+        
+        .modal-close {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 2rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast);
+        }
+        
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--brand-primary);
+        }
+        
+        .modal-body {
+            padding: var(--space-lg);
+        }
+        
+        .case-study-section {
+            margin-bottom: var(--space-lg);
+        }
+        
+        .case-study-section h3 {
+            font-size: 1.5rem;
+            color: var(--brand-primary);
+            margin-bottom: var(--space-md);
+        }
+        
+        .case-study-section p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .case-study-section ul {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            padding-left: 20px;
+        }
+        
+        /* Image Carousel */
+        .carousel {
+            position: relative;
+            margin: var(--space-md) 0;
+        }
+        
+        /* Image Carousel */
+.carousel {
+    position: relative;
+    margin: var(--space-md) 0;
+    overflow: hidden; /* moved here safely */
+}
+
+.carousel-images {
+    display: flex;
+    background: var(--bg-page);
+    border-radius: var(--radius-md);
+    transition: transform var(--transition-base); /* ensures smooth sliding */
+}
+
+/* Each slide */
+.carousel-image {
+    flex: 0 0 100%;            /* CRITICAL: locks slide width */
+    max-width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        135deg,
+        rgba(217, 251, 6, 0.1),
+        rgba(136, 204, 0, 0.1)
+    );
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+/* Image inside slide */
+.carousel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* preserves your intent */
+    display: block;
+}
+
+/* Controls */
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 var(--space-sm);
+    pointer-events: none;
+}
+
+.carousel-btn {
+    background: rgba(10, 10, 10, 0.7);
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+    pointer-events: all;
+}
+
+.carousel-btn:hover {
+    background: var(--brand-primary);
+    color: var(--text-inverse);
+}
+
+        
+        /* Resume Viewer */
+        .resume-viewer {
+            width: 100%;
+            height: 70vh;
+            border: none;
+            border-radius: var(--radius-md);
+            background: var(--bg-page);
+        }
+        
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            padding: var(--space-xl) var(--space-lg);
+            text-align: center;
+        }
+        
+        .footer p {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+        
+        .social-link {
+            width: 48px;
+            height: 48px;
+            background: rgba(217, 251, 6, 0.1);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-primary);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+        }
+        
+        .social-link:hover {
+            background: var(--brand-primary);
+            color: var(--text-inverse);
+            transform: translateY(-4px);
+        }
+        
+        /* ========== PRINT STYLES ========== */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .nav, .theme-controls, .modal, .btn, .carousel-controls {
+                display: none !important;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+            
+            .hero-section {
+                min-height: auto;
+                padding: 20px;
+            }
+        }
+        
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-chart-container {
+                position: static;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--bg-card);
+                flex-direction: column;
+                padding: var(--space-md);
+                border-bottom: 1px solid var(--border-color);
+                display: none;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+            
+            .theme-controls {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .additional-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .modal-content {
+                max-height: 95vh;
+            }
+        }
+        
+        /* ========== ACCESSIBILITY ========== */
+        *:focus-visible {
+            outline: 2px solid var(--brand-primary);
+            outline-offset: 2px;
+        }
+        
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* ========== ANIMATIONS ========== */
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            opacity: 0;
-            animation: slideUp 1s ease-out 1.4s forwards;
-        }
-
-        .btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn-primary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .btn-primary:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: #2c3e50;
-            transform: translateY(-2px);
-        }
-
-        .btn-certificate {
-            background: var(--accent-gradient);
-            color: white !important;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn-certificate:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Sections */
-        .section {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-            color: var(--text-color);
-        }
-
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--accent-gradient);
-            border-radius: 2px;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 3rem;
-        }
-
-        .skill-category {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            color: var(--text-color);
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .skill-category h3 {
-            color: var(--professional-primary);
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-            transition: color 0.3s ease;
-        }
-
-        /* Dark mode specific skills section fixes */
-        .dark-mode .skill-category h3 {
-            color: var(--professional-primary);
-        }
-
-        .dark-mode .skill-category h3 i {
-            color: var(--professional-primary);
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-tag {
-            background: var(--accent-gradient);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .skill-tag:hover {
-            transform: scale(1.05);
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 3rem;
-        }
-
-        /* layout only for Projects Section */
-        #projects .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 columns */
-            gap: 40px;
-            justify-content: center; /* center align */
-        }
-
-        @media (max-width: 768px) {
-        #projects .projects-grid {
-        grid-template-columns: 1fr; /* stack on mobile */
-            }
-        }
-
-        .project-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            color: var(--text-color);
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-        }
-
-        .project-header {
-            background: var(--accent-gradient);
-            color: white;
-            padding: 25px;
-        }
-
-        .project-header h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        .project-content {
-            padding: 25px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .project-content p {
-            flex-grow: 1;
-        }
-
-        .project-content .btn-certificate {
-            margin-top: 15px;
-            align-self: flex-start;
-        }
-
-        /* Education & Contact Sections */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 3rem;
-        }
-
-        .info-card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            color: var(--text-color);
-        }
-
-        .info-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .info-card h3 {
-            color: var(--text-color);
-        }
-
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #333;
-            transition: all 0.3s ease;
-        }
-
-        .contact-link:hover {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: white;
-            transform: translateX(5px);
-        }
-
-        .dark-mode .contact-link {
-            background: #3a3a3a;
-            color: var(--text-color);
-        }
-
-        .contact-link i {
-            font-size: 1.2rem;
-            width: 25px;
-        }
-
-        /* Education items styling */
-        .education-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .dark-mode .education-item {
-            background: #3a3a3a;
-            color: var(--text-color);
-        }
-
-        .education-item h4 {
-            color: var(--professional-primary);
-        }
-
-        /* Additional Info */
-        .additional-info {
-            background: var(--section-bg);
-            margin: 40px 0;
-            padding: 40px;
-            border-radius: 15px;
-            color: var(--text-color);
-        }
-
-        .info-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .info-item h4 {
-            color: var(--professional-primary);
-            margin-bottom: 10px;
-        }
-
-        /* Fix spacing for info-card content */
-        .info-card h3 {
-            color: var(--professional-primary);
-            margin-bottom: 25px;
-            font-size: 1.3rem;
-            transition: color 0.3s ease;
-        }
-
-        /* Make info-card headers look like skill-category headers */
-        .info-card h3 {
-            color: var(--professional-primary);
-            margin-bottom: 25px;
-            font-size: 1.3rem;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .info-card h3 i {
-            color: var(--professional-primary);
-            transition: color 0.3s ease;
-        }
-
-        /* Dark mode specific for info cards */
-        .dark-mode .info-card h3 {
-            color: var(--professional-primary);
-        }
-
-        .dark-mode .info-card h3 i {
-            color: var(--professional-primary);
-        }
-
-        .info-card p {
-            margin-top: 20px;
-            line-height: 1.8;
-            color: var(--text-color);
-        }
-
-        .info-card .tag-list {
-            margin-top: 20px;
-        }
-
-        /* Dark mode fixes for all info-card content */
-        .dark-mode .info-card p {
-            color: var(--text-color) !important;
-        }
-
-        .dark-mode .info-card {
-            color: var(--text-color) !important;
-        }
-
-        .dark-mode .info-card * {
-            color: var(--text-color);
-        }
-
-        /* Ensure tags inherit proper colors */
-        .info-card .tag {
-            color: var(--text-color);
-            background: var(--card-bg);
-            border: 1px solid #dee2e6;
-        }
-
-        .dark-mode .info-card .tag {
-            color: var(--text-color) !important;
-            background: var(--card-bg) !important;
-            border-color: #444 !important;
-        }
-
-        .tag-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tag {
-            background: var(--card-bg);
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.9rem;
-            border: 1px solid #dee2e6;
-            color: var(--text-color);
-        }
-
-        .dark-mode .tag {
-            background: #3a3a3a !important;
-            border-color: #444 !important;
-            color: #eaeaea !important;
-        }
-
-        /* Scroll Animation */
+        
         .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
+            animation: fadeIn 0.6s ease forwards;
         }
+        /* ===== FORCE ALL TEXT BLACK IN LIGHT MODE ===== */
+body.light-mode,
+body.light-mode * {
+    color: #000000 !important;
+}
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav {
-                position: relative;
-                top: auto;
-                right: auto;
-                justify-content: center;
-                margin-bottom: 20px;
-                flex-wrap: wrap;
-                gap: 5px;
-            }
-
-            .nav-btn {
-                padding: 8px 15px;
-                font-size: 0.8rem;
-            }
-
-            .skills-grid,
-            .projects-grid,
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .btn-resume {
-            background: var(--accent-gradient);
-            color: white !important;
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-size: 1rem;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .btn-resume:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-        }
-
-        .tech-tag {
-            display: inline-block;
-            background-color: #3498db;
-            color: #fff;
-            padding: 5px 12px;
-            margin: 4px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
+        
+        /* ========== UTILITIES ========== */
+        .text-center { text-align: center; }
+        .mt-lg { margin-top: var(--space-lg); }
+        .mb-lg { margin-bottom: var(--space-lg); }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <div class="nav">
-        <button class="nav-btn" onclick="scrollToSection('skills')">Skills</button>
-        <button class="nav-btn" onclick="scrollToSection('projects')">Projects</button>
-        <button class="nav-btn" onclick="scrollToSection('contact')">Contact</button>
-        <button class="nav-btn" id="theme-toggle">🌙 Dark Mode</button>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div id="tsparticles"></div>
-        
-        <div class="hero-content">
-            <h1>Irfaan Ahamed</h1>
-            <p class="subtitle">Full Stack Developer • UI/UX Designer • Prompt Engineer</p>
-            <p class="description">
-                Aspiring Full-Stack Developer and UI/UX Designer skilled in Java, Spring Boot, MySQL, and modern web technologies, with added proficiency in Prompt Engineering and Generative AI. Passionate about building scalable, user-focused applications that combine robust backend development, intuitive design, and AI-driven innovation, while embracing clean code practices, continuous learning, and collaboration.
-            </p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">
-                    <i class="fas fa-code"></i>
-                    View My Work
-                </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <i class="fas fa-envelope"></i>
-                    Get In Touch
-                </a>
-            </div>
-        </div>
-    </section>
-
-<!-- Skills Section -->
-<section class="section" id="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-        
-        <div class="skill-category fade-in">
-            <h3><i class="fas fa-code"></i> Languages</h3>
-            <div class="skill-tags">
-                <span class="skill-tag">Java</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">Python</span>
-            </div>
-        </div>
-        
-        <div class="skill-category fade-in">
-            <h3><i class="fas fa-cubes"></i> Frameworks</h3>
-            <div class="skill-tags">
-                <span class="skill-tag">Spring Boot</span>
-                <span class="skill-tag">Bootstrap</span>
-            </div>
-        </div>
-        
-        <div class="skill-category fade-in">
-            <h3><i class="fas fa-database"></i> Database</h3>
-            <div class="skill-tags">
-                <span class="skill-tag">MySQL</span>
-                <span class="skill-tag">PostgreSQL</span>
-            </div>
-        </div>
-
-        <div class="skill-category fade-in">
-            <h3><i class="fas fa-laptop-code"></i> Web / Frontend</h3>
-            <div class="skill-tags">
-                <span class="skill-tag">HTML</span>
-                <span class="skill-tag">CSS</span>
-                <span class="skill-tag">React</span>
-            </div>
-        </div>
-
-        <div class="skill-category fade-in">
-            <h3><i class="fas fa-pencil-ruler"></i> UI / UX Design</h3>
-            <div class="skill-tags">
-                <span class="skill-tag">Figma</span>
-                <span class="skill-tag">Adobe XD</span>
-                <span class="skill-tag">Wireframing</span>
-                <span class="skill-tag">Prototyping</span>
-            </div>
-        </div>
-
-        <div class="skill-category fade-in">
-            <h3><i class="fas fa-brain"></i> AI / Prompt Engineering</h3>
-            <div class="skill-tags">
-                <span class="skill-tag">Prompt Generation</span>
-                <span class="skill-tag">Prompt Optimization</span>
-                <span class="skill-tag">Generative AI</span>
-            </div>
-        </div>
-
-        <div class="skill-category fade-in">
-            <h3><i class="fas fa-tools"></i> Build Tools</h3>
-            <div class="skill-tags">
-                <span class="skill-tag">GitHub</span>
-                <span class="skill-tag">MySQL Workbench</span>
-                <span class="skill-tag">pgAdmin</span>
-                <span class="skill-tag">Eclipse IDE</span>
-                <span class="skill-tag">Visual Studio Code</span>
-            </div>
-        </div>
-
-        <div class="skill-category fade-in">
-            <h3><i class="fas fa-cloud"></i> Cloud Basics</h3>
-            <div class="skill-tags">
-                <span class="skill-tag">Cloud SQL</span>
-                <span class="skill-tag">Google Cloud Platform (GCP)</span>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Certificates Section -->
-        <section class="section" id="certificates">
-            <h2>Certifications</h2>
-            <div class="projects-grid">
-                <div class="project-card fade-in">
-                    <div class="project-header"><h3>Full Stack Developer - SoftLogic</h3></div>
-                    <div class="project-content">
-                        <p>Certification for Full Stack Development program at SoftLogic Academy.</p>
-                        <a href="https://drive.google.com/file/d/1d_UZG6enhW0AI0Dc9nDhYZTShmffwHXF/view?usp=drive_link" target="_blank" class="btn-certificate">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-header"><h3>Java Fundamentals - IBM</h3></div>
-                    <div class="project-content">
-                        <p>IBM certification in Java fundamentals and programming concepts.</p>
-                        <a href="https://courses.etrain.skillsnetwork.site/certificates/934dac5ef6104178863b94cbe9338daa" target="_blank" class="btn-certificate">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-header"><h3>Prompt Engineering - SimpliLearn</h3></div>
-                    <div class="project-content">
-                        <p>Professional certificate in Prompt Engineering and AI-driven applications.</p>
-                        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI0MjgzIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODgyOTU2NV85MjEyMjkwMTc1NTc4MTUwODIwNS5wbmciLCJ1c2VybmFtZSI6IklyZmFhbiBBaGFtZWQifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F7216%2FIntroduction%2520to%2520Prompt%2520Engineering%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1413879721585198979&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVD65yyUizLAs3CEuyrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDADEKv4pBAAAA" target="_blank" class="btn-certificate">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-header"><h3>Introduction To GenAI - SimpliLearn</h3></div>
-                    <div class="project-content">
-                        <p>Introduction to Generative AI concepts and applications by SimpliLearn.</p>
-                        <a href="https://simpli-web.app.link/e/dOYf18UJ3Vb" target="_blank" class="btn-certificate">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-                
-
-                <div class="project-card fade-in">
-                    <div class="project-header"><h3>Python 101 - IBM</h3></div>
-                    <div class="project-content">
-                        <p>Introductory Python certification by IBM.</p>
-                        <a href="https://courses.etrain.skillsnetwork.site/certificates/0a5e2882c8154560b119ead0cdef6d4c" target="_blank" class="btn-certificate">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-header"><h3>PostgreSQL - SimpliLearn</h3></div>
-                    <div class="project-content">
-                        <p>Certified PostgreSQL Database Management by SimpliLearn.</p>
-                        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIzMjA1IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODgzNTM1Ml85MjEyMjkwMTc1NTg2MDI5MDkzNC5wbmciLCJ1c2VybmFtZSI6IklyZmFhbiBBaGFtZWQifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F5991%2FPostgreSQL%2520%3A%2520Become%2520an%2520SQL%2520developer%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1413879721585198979&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVL3FOsig1TC42CkuyrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDAOFnARtBAAAA" target="_blank" class="btn-certificate">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-header"><h3>Master Artificial Intelligence - SimpliLearn</h3></div>
-                    <div class="project-content">
-                        <p>Certification in Artificial Intelligence concepts for web applications development.</p>
-                        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI1MDY5IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODgzNzgzNV85MjE4Njg5MTc1NTg4NDAwNzk3Ni5wbmciLCJ1c2VybmFtZSI6IklyZmFhbiBBaGFtZWQifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F8065%2FMaster%2520AI%2520for%2520Web%2520App%2520Development%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1413879721585198979&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVN83K8M9KKgoxCkuyrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDAEbsfbVBAAAA" target="_blank" class="btn-certificate">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-header"><h3>Advanced Prompt Engineering - SimpliLearn</h3></div>
-                    <div class="project-content">
-                        <p>Professional certificate in Advanced Prompt Engineering and AI-driven applications.</p>
-                        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI1NTE5IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODg0MDE5N185MjE4Njg5MTc1NTkzMjkxNzI2My5wbmciLCJ1c2VybmFtZSI6IklyZmFhbiBBaGFtZWQifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F8562%2FAdvanced-Prompt-Engineering_%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1413879721585198979&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVD4rKy3DxcA8wDkuyrytKTUstKsrMS49PKsovL04tsnXOKMrPTQUA6%2BU%2BcT8AAAA%3D" target="_blank" class="btn-certificate">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-header"><h3>Introduction to Google Cloud Platform - SimpliLearn</h3></div>
-                    <div class="project-content">
-                        <p>Certified in Introduction to Google Cloud Platform, storage, and deployment tools for developers.</p>
-                        <a href="https://simpli.app.link/P20ulGQt5Vb" target="_blank" class="btn-certificate">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-
-<div class="project-card fade-in">
-    <div class="project-header"><h3>Generative AI for Software Developers - IBM</h3></div>
-    <div class="project-content">
-        <p>Certified by IBM in leveraging Generative AI tools, including prompt engineering, code generation, and integration of large language models to enhance software development workflows.</p>
-        <a href="https://courses.etrain.skillsnetwork.site/certificates/a92d76d529c84cecbcfbb66c69a84a55" 
-           target="_blank" class="btn-certificate">
-            <i class="fas fa-certificate"></i> View Certificate
-        </a>
-    </div>
-</div>
-
-
-                <div class="project-card fade-in">
-    <div class="project-header"><h3>UI/UX Designing for Beginners - SimpliLearn</h3></div>
-    <div class="project-content">
-        <p>Certified in the fundamentals of UI/UX design, covering user-centered design principles, wireframing, and prototyping.</p>
-        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI0OTE5IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODk3NDMwNV85MjI4MDYyMTc1NzgzMjI5MTk2MC5wbmciLCJ1c2VybmFtZSI6IklyZmFhbiBBaGFtZWQifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F7910%2FUI%252FUX%2520for%2520Beginners%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1413879721585198979&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVL6gMt3B0Mc5yDU%2ByrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDAB23piNBAAAA" 
-           target="_blank" class="btn-certificate">
-            <i class="fas fa-certificate"></i> View Certificate
-        </a>
-    </div>
-</div>
-
-<div class="project-card fade-in">
-    <div class="project-header"><h3>Introduction to Graphic Design & UI/UX Basics - SimpliLearn</h3></div>
-    <div class="project-content">
-        <p>Certified in graphic design fundamentals and UI/UX basics, including design principles, typography, and visual hierarchy.</p>
-        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIzNDA1IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODk3NDMxMF85MjI4MDYyMTc1NzgyNjI4NTMwOS5wbmciLCJ1c2VybmFtZSI6IklyZmFhbiBBaGFtZWQifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F6307%2FIntroduction%2520to%2520Graphic%2520Design%253B%2520Basics%2520of%2520UI%252FUX%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1413879721585198979&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVT%2FQszQgqDkp2DU%2ByrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDAKgzGV9BAAAA" 
-           target="_blank" class="btn-certificate">
-            <i class="fas fa-certificate"></i> View Certificate
-        </a>
-    </div>
-</div>
-
-            </div>
-        </section>
-        
-        
-        <!-- Achievements Section -->
-        <section class="section" id="achievements">
-            <h2>Achievements</h2>
-            <div class="info-grid">
-                <div class="info-card fade-in">
-                    <h3><i class="fas fa-trophy"></i> Finalist – Soft Logic Academy (Codeathon Event)</h3>
-                    <p>• Participated in a codeathon solving real-world problems using frontend technologies and MySQL.<br>
-                        • Collaborated in a team to develop a working prototype within a month.</p>
-                </div>
-                
-                <div class="info-card fade-in">
-                    <h3><i class="fas fa-award"></i> Participant & Winner – Web 'O' Spider (Hindustan University)</h3>
-                    <p>• Developed a responsive UI in under 1 hour during the technical event.</p>
-                </div>
-            </div>
-        </section>
-
-        
-
-<!-- Projects Section -->
-<section class="section" id="projects">
-  <h2>Featured Projects</h2>
-  <div class="projects-grid">
+    <!-- Skip Link -->
+    <a href="#main" class="skip-link">Skip to content</a>
     
-    <div class="project-card fade-in">
-      <div class="project-header">
-        <h3><i class="fas fa-dumbbell"></i> GOFIT - Fitness Tracker ChatBot</h3>
-      </div>
-      <div class="project-content">
-        <p>
-GoFit is an interactive fitness chatbot designed to provide personalized health and wellness assistance. It answers fitness-related questions, suggests customized diet and workout plans, and offers guidance on water intake, nutrient balance, macros, and micronutrients. The chatbot acts as a virtual fitness companion, making health management more accessible and engaging.</p>
-<p>
-<b>Key Features:</b></p>
-<span>💬 Fitness Q&A – Responds to user queries on exercises, nutrition, and lifestyle.</span>
-<span>🍎 Diet Planning – Generates tailored meal plans with macro & micro nutrient breakdowns.</span>
-<span>🏋️ Workout Suggestions – Recommends personalized exercise routines.</span>
-<span>💧 Wellness Guidance – Provides hydration and nutrient tracking tips.</span>
-<span>⚡ Streamlit-powered UI – Clean and intuitive interface for smooth user experience.</span>
-
-<p><b>Built using:</b></p>
-
-
-
-        <div class="skill-tags">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Streamlit</span>
-          <span class="tech-tag">Groq</span>
-          <span class="tech-tag">APIs</span>
-        </div><br>
-        <div class="skill-tags" style="margin-top: 15px;">
-          <span class="skill-tag">Automation</span>
-          <span class="skill-tag">Data Logging</span>
+    <!-- Navigation -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+    <a href="#home" class="nav-logo">
+        <img src="assets/Logo.png" alt="Irfaan Ahamed Logo" class="nav-logo-img">
+        </a>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i data-feather="menu"></i>
+            </button>
+            
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+                <li role="none"><a href="#certificates" class="nav-link" role="menuitem">Certificates</a></li>
+                <li role="none"><a href="#achievements" class="nav-link" role="menuitem">Achievements</a></li>
+                <li role="none"><a href="#resume" class="nav-link" role="menuitem">Resume</a></li>
+                <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+                
+                <li role="none" class="theme-controls">
+                    <button class="theme-toggle" aria-label="Toggle dark/light mode">
+                        <i data-feather="sun"></i>
+                        <span id="themeText">Light</span>
+                    </button>
+                    
+                    <div style="position: relative;">
+                        <button class="accent-toggle" aria-label="Change accent color">
+                            <i data-feather="droplet"></i>
+                            Accent
+                        </button>
+                        <div class="accent-swatches" id="accentSwatches" role="group" aria-label="Accent color options">
+                            <button class="accent-swatch accent-professional active" data-accent="professional" aria-label="Professional accent"></button>
+                            <button class="accent-swatch accent-creative" data-accent="creative" aria-label="Creative accent"></button>
+                            <button class="accent-swatch accent-minimal" data-accent="minimal" aria-label="Minimal accent"></button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
-      </div>
-    </div>
-
-    <div class="project-card fade-in">
-      <div class="project-header">
-        <h3><i class="fas fa-tools"></i> SERVZO</h3>
-      </div>
-      <div class="project-content">
-        <p>Servzo is a web-based platform that connects local service providers with customers in need of everyday services. From home repairs to personal care, the application bridges the gap between service seekers and providers, ensuring convenience, trust, and efficiency in local service discovery and booking.</p>
-        <p><b>Key Features</b></p>
-        <span>🔍 Service Discovery – Users can browse and search for service providers in their area.</span>
-        <span>📝 Booking System – Customers can schedule and book services directly through the platform.</span>
-        <span>👨‍🔧 Provider Profiles – Service providers can create and manage detailed profiles.</span>
-        <span>⭐ Ratings & Reviews – Customers can leave feedback, improving trust and credibility.</span>
-        <span>📊 Database Integration – MySQL database ensures secure data storage and fast retrieval.</span>
-        <p><b>Built using:</b></p>
-        <div class="skill-tags">
-          <span class="tech-tag">MySql</span>
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">Bootstrap</span>
-          <span class="tech-tag">PHP</span>
-        </div><br>
-        <div class="skill-tags" style="margin-top: 15px;">
-          <span class="skill-tag">Web Platform</span>
-          <span class="skill-tag">Service Management</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card fade-in">
-      <div class="project-header">
-        <h3><i class="fas fa-map-marker-alt"></i> MEMORIES - Location-Based Story Sharing Web</h3>
-      </div>
-<div class="project-content">
-        <p>
-    Memories is a full-stack web application that enables users to share and pin their personal stories on an interactive map. By combining geolocation features with social storytelling, the platform creates a visual diary where users can explore and revisit moments tied to specific locations.</p>
-    <b>Key Features:</b></p>
-    <span>🗺 Interactive Map Integration – Users can tag and view stories based on location.</span>
-    <span>📝 Personal Story Sharing – Secure CRUD operations for posting, updating, and managing stories.</span>
-    <span>⚡ Real-time Engagement – Instant story retrieval and sharing for an interactive experience.</span>
-    <span>🎨 User-friendly UI – Intuitive navigation with a clean, responsive Bootstrap design.</span>
-    <span>🔐 Scalable Backend – Spring Boot and MySQL power the backend with optimized performance and security.</span>
-
-        <p><b>Built using:</b></p>
-        <div class="skill-tags">
-          <span class="tech-tag">Java</span>
-          <span class="tech-tag">MySql</span>
-          <span class="tech-tag">SpringBoot</span>
-          <span class="tech-tag">Leaflet</span>
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">JavaScript</span>
-
-        </div><br>
-        <div class="skill-tags" style="margin-top: 15px;">
-          <span class="skill-tag">Story Sharing</span>
-          <span class="skill-tag">Location Based</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card fade-in">
-      <div class="project-header">
-        <h3><i class="fas fa-tasks"></i> TASK TRACKER</h3>
-      </div>
-      <div class="project-content">
-        <p>Task Tracker is a full-stack web application designed to help users manage their daily to-dos efficiently. With features for task creation, updates, and deletion, the app provides a clean and responsive interface to boost productivity. Real-time progress tracking ensures users can stay on top of their priorities effortlessly.</p>
-        <b>Key Features:</b></p>
-        <span>📝 Task Management – Add, update, and delete tasks seamlessly.</span>
-        <span>⏳ Real-Time Tracking – Track task completion with live updates.</span>
-        <span>🎨 Responsive UI – User-friendly interface built with Bootstrap for smooth navigation.</span>
-        <span>🔐 Secure Backend – Spring Boot and MySQL for robust CRUD operations and data storage.</span>
-        <span>⚡ Optimized Performance – Fast and scalable backend ensuring reliability.</span>
-        <span>📊 Task Prioritization – Users can set priority levels (High, Medium, Low) to stay focused on important tasks.</span>
-        <p><b>Built using:</b></p>
-         <div class="skill-tags">
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">SpringBoot</span>
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">Bootstrap</span>
-          <span class="tech-tag">Java</span>
-        </div><br>
-        <div class="skill-tags" style="margin-top: 15px;">
-          <span class="skill-tag">Productivity Tool</span>
-          <span class="skill-tag">Task Management</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- Additional Information Section -->
-        <section class="section" id="additional-info">
-            <h2>Additional Information</h2>
-            <div class="info-grid">
-                <div class="info-card fade-in">
-                    <h3><i class="fas fa-user-tie"></i> Soft Skills</h3>
-                    <div class="tag-list">
-                        <span class="tech-tag">Communication</span>
-                        <span class="tech-tag">Problem Solving</span>
-                        <span class="tech-tag">Analytical Thinking</span>
-                        <span class="tech-tag">Teamwork</span>
-                        <span class="tech-tag">Time Management</span>
-                        <span class="tech-tag">Adaptability</span>
+    </nav>
+    
+    <!-- Main Content -->
+    <main id="main" role="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-background" aria-hidden="true"></div>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 id="hero-title">
+                        Hi, I'm <span class="brand-accent">Irfaan Ahamed</span>
+                    </h1>
+                    <p class="subtitle">Full Stack Developer • UI/UX Designer • Prompt Engineer</p>
+                    <p class="description">
+                        Aspiring Full-Stack Developer and UI/UX Designer skilled in Java, Spring Boot, MySQL, and modern web technologies, with added proficiency in Prompt Engineering and Generative AI. Passionate about building scalable, user-focused applications that combine robust backend development, intuitive design, and AI-driven innovation, while embracing clean code practices, continuous learning, and collaboration.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">
+                            <i data-feather="briefcase"></i>
+                            View My Work
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i data-feather="mail"></i>
+                            Get In Touch
+                        </a>
                     </div>
                 </div>
                 
-                <div class="info-card fade-in">
-                    <h3><i class="fas fa-heart"></i> Hobbies</h3>
-                    <div class="tag-list">
-                        <span class="tech-tag">Fitness</span>
-                        <span class="tech-tag">Biking</span>
-                        <span class="tech-tag">Gaming</span>
-                        <span class="tech-tag">Music</span>
-                        <span class="tech-tag">Reading</span>
-                        <span class="tech-tag">Sports</span>
-                    </div>
-                </div>
-                
-                <div class="info-card fade-in">
-                   <h3><i class="fas fa-language"></i> Languages</h3>
-                    <div class="tag-list">
-                        <span class="tech-tag">English</span>
-                        <span class="tech-tag">Tamil</span>
-                        <span class="tech-tag">Hindi</span>
-                        <span class="tech-tag">Urdu</span>
+                <div class="profile-card">
+                    <div class="profile-image">
+    <img src="assets/Logo.png" alt="Logo">
+</div>
+
+
+                    <div class="profile-info">
+                        <h3>Irfaan Ahamed</h3>
+                        <p>Chennai, India</p>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-value">12+</span>
+                                <span class="stat-label">Certificates</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">4+</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">8.8</span>
+                                <span class="stat-label">CGPA</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-    </section>
-
-    <!-- Resume Section -->
-<section class="section" id="resume" style="text-align: center; padding: 40px 0;">
-    <h2>Download My Resume</h2>
-    <p>You can download my latest resume by clicking the button below.</p>
-    <a href="https://drive.google.com/uc?export=download&id=1qbWyhRK_X-YIdoQGOd5JSXOSg5Hxzb9q" 
-       download 
-       class="btn-resume">
-       <i class="fas fa-download"></i> Download Resume
-    </a>
-</section>
-
-    <!-- Education & Contact Section -->
-    <section class="section" id="contact">
-        <h2>Education & Contact</h2>
-        <div class="info-grid">
-            <div class="info-card fade-in">
-                <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-                <div style="margin-top: 20px;">
-                    <div class="education-item">
-                        <h4>Bachelor Of Computer Application</h4>
-                        <p><strong>Hindustan Institute Of Technology and Sciences</strong></p>
-                        <p>2022-2025 | CGPA: 8.80</p>
-                    </div>
-                    
-                    <div class="education-item">
-                        <h4>Secondary Education (12th Grade)</h4>
-                        <p><strong>Kendriya Vidyalaya IIT Chennai</strong></p>
-                        <p>2020-2022 | 70%</p>
-                    </div>
-                    
-                    <div class="education-item">
-                        <h4>Secondary Education (10th Grade)</h4>
-                        <p><strong>Kendriya Vidyalaya IIT Chennai</strong></p>
-                        <p>2010-2020 | 72%</p>
-                    </div>
-                </div>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="section" aria-labelledby="skills-title">
+            <div class="section-header">
+                <h2 id="skills-title" class="section-title">Skills & Expertise</h2>
+                <p class="section-subtitle">A comprehensive toolkit for building modern applications</p>
             </div>
             
-            <div class="info-card fade-in">
-                <h3><i class="fas fa-map-marker-alt"></i> Contact Information</h3>
-                <p style="margin-bottom: 20px;">Located in Thazhambur, Chennai</p>
+            <div class="skills-container">
+                <div class="skills-grid">
+                    <!-- Languages -->
+                    <div class="skill-category">
+                        <h3><i data-feather="code"></i> Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Python</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Frameworks -->
+                    <div class="skill-category">
+                        <h3><i data-feather="package"></i> Frameworks</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Spring Boot</span>
+                            <span class="skill-tag">Bootstrap</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Database -->
+                    <div class="skill-category">
+                        <h3><i data-feather="database"></i> Database</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Web / Frontend -->
+                    <div class="skill-category">
+                        <h3><i data-feather="monitor"></i> Web / Frontend</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">React</span>
+                        </div>
+                    </div>
+                    
+                    <!-- UI/UX Design -->
+                    <div class="skill-category">
+                        <h3><i data-feather="layout"></i> UI / UX Design</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Adobe XD</span>
+                            <span class="skill-tag">Wireframing</span>
+                            <span class="skill-tag">Prototyping</span>
+                        </div>
+                    </div>
+                    
+                    <!-- AI / Prompt Engineering -->
+                    <div class="skill-category">
+                        <h3><i data-feather="cpu"></i> AI / Prompt Engineering</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Prompt Generation</span>
+                            <span class="skill-tag">Prompt Optimization</span>
+                            <span class="skill-tag">Generative AI</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Build Tools -->
+                    <div class="skill-category">
+                        <h3><i data-feather="tool"></i> Build Tools</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">MySQL Workbench</span>
+                            <span class="skill-tag">pgAdmin</span>
+                            <span class="skill-tag">Eclipse IDE</span>
+                            <span class="skill-tag">Visual Studio Code</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Cloud Basics -->
+                    <div class="skill-category">
+                        <h3><i data-feather="cloud"></i> Cloud Basics</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Cloud SQL</span>
+                            <span class="skill-tag">Google Cloud Platform (GCP)</span>
+                        </div>
+                    </div>
+                </div>
                 
-                <div class="contact-links">
-                    <a href="mailto:kirfaanahamed1610@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i>
-                        <span>kirfaanahamed1610@gmail.com</span>
-                    </a>
-                    
-                    <a href="tel:9025689520" class="contact-link">
-                        <i class="fas fa-phone"></i>
-                        <span>+91 9025689520</span>
-                    </a>
-                    
-                    <a href="https://www.linkedin.com/in/irfaan-ahamed-k-0529b42a4/" class="contact-link" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn: Irfaan Ahamed</span>
-                    </a>
-                    
-                    <a href="https://github.com/irfaan1610" class="contact-link" target="_blank">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub: Irfaan Ahamed</span>
-                    </a>
+                <!-- Skills Chart -->
+                <div class="skills-chart-container">
+                    <h3>Technical Proficiency</h3>
+                    <canvas id="skillsChart" aria-label="Skills radar chart showing technical proficiency"></canvas>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="section" aria-labelledby="projects-title">
+            <div class="section-header">
+                <h2 id="projects-title" class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Showcasing my work in full-stack development, UI/UX design, and AI integration</p>
+            </div>
+            
+            <!-- Project Filters -->
+            <div class="project-filters" role="group" aria-label="Project filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+                <button class="filter-btn" data-filter="uiux">UI/UX</button>
+                <button class="filter-btn" data-filter="ai">AI</button>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1: GOFIT -->
+                <article class="project-card" data-type="fullstack ai" data-project="gofit">
+                    <div class="project-image" aria-hidden="true">
+                        <i data-feather="activity" style="width: 80px; height: 80px;"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>GoFIT</h3>
+                        <p class="project-description">
+                            GoFit is an interactive fitness chatbot designed to provide personalized health and wellness assistance. It answers fitness-related questions, suggests customized diet and workout plans, and offers guidance on water intake, nutrient balance, macros, and micronutrients.
+                        </p>
+                        <div class="project-features">
+                            <ul>
+                                <li>💬 Fitness Q&A – Responds to user queries on exercises, nutrition, and lifestyle.</li>
+                                <li>🍎 Diet Planning – Generates tailored meal plans with macro & micro nutrient breakdowns.</li>
+                                <li>🏋️ Workout Suggestions – Recommends personalized exercise routines.</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Groq APIs</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-primary btn-small" onclick="openCaseStudy('gofit')">
+                                <i data-feather="book-open"></i>
+                                Case Study
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project 2: SERVZO -->
+                <article class="project-card" data-type="fullstack uiux" data-project="servzo">
+                    <div class="project-image" aria-hidden="true">
+                        <i data-feather="users" style="width: 80px; height: 80px;"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Servzo</h3>
+                        <p class="project-description">
+                            Servzo is a web-based platform that connects local service providers with customers in need of everyday services. From home repairs to personal care, the application bridges the gap between service seekers and providers.
+                        </p>
+                        <div class="project-features">
+                            <ul>
+                                <li>🔍 Service Discovery – Users can browse and search for service providers in their area.</li>
+                                <li>📝 Booking System – Customers can schedule and book services directly.</li>
+                                <li>⭐ Ratings & Reviews – Customers can leave feedback, improving trust.</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Bootstrap</span>
+                            <span class="tech-tag">PHP</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-primary btn-small" onclick="openCaseStudy('servzo')">
+                                <i data-feather="book-open"></i>
+                                Case Study
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project 3: MEMORIES -->
+                <article class="project-card" data-type="fullstack uiux" data-project="memories">
+                    <div class="project-image" aria-hidden="true">
+                        <i data-feather="map-pin" style="width: 80px; height: 80px;"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Memories</h3>
+                        <p class="project-description">
+                            Memories is a full-stack web application that enables users to share and pin their personal stories on an interactive map. By combining geolocation features with social storytelling, the platform creates a visual diary.
+                        </p>
+                        <div class="project-features">
+                            <ul>
+                                <li>🗺 Interactive Map Integration – Users can tag and view stories based on location.</li>
+                                <li>📝 Personal Story Sharing – Secure CRUD operations for managing stories.</li>
+                                <li>⚡ Real-time Engagement – Instant story retrieval and sharing.</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Leaflet</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-primary btn-small" onclick="openCaseStudy('memories')">
+                                <i data-feather="book-open"></i>
+                                Case Study
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project 4: TASK TRACKER -->
+                <article class="project-card" data-type="fullstack uiux" data-project="tasktracker">
+                    <div class="project-image" aria-hidden="true">
+                        <i data-feather="check-square" style="width: 80px; height: 80px;"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>ByteFlow</h3>
+                        <p class="project-description">
+                            ByteFlow is a full-stack web application designed to help users manage their daily to-dos efficiently. With features for task creation, updates, and deletion, the app provides a clean and responsive interface.
+                        </p>
+                        <div class="project-features">
+                            <ul>
+                                <li>📝 Task Management – Add, update, and delete tasks seamlessly.</li>
+                                <li>⏳ Real-Time Tracking – Track task completion with live updates.</li>
+                                <li>📊 Task Prioritization – Set priority levels (High, Medium, Low).</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">Bootstrap</span>
+                            <span class="tech-tag">Java</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-primary btn-small" onclick="openCaseStudy('tasktracker')">
+                                <i data-feather="book-open"></i>
+                                Case Study
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Certificates Section -->
+        <section id="certificates" class="section" aria-labelledby="certificates-title">
+            <div class="section-header">
+                <h2 id="certificates-title" class="section-title">Certifications</h2>
+                <p class="section-subtitle">Professional credentials and continuous learning achievements</p>
+            </div>
+            
+            <div class="certificates-grid">
+                <!-- Certificate 1 -->
+                <article class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon" aria-hidden="true">
+                            <i data-feather="award"></i>
+                        </div>
+                        <div>
+                            <h3>Full Stack Developer</h3>
+                            <p class="certificate-issuer">SoftLogic</p>
+                        </div>
+                    </div>
+                    <p class="certificate-description">
+                        Certification for Full Stack Development program at SoftLogic Academy.
+                    </p>
+                    <div class="certificate-details">
+                        <p>Comprehensive training in frontend and backend technologies, database management, and deployment strategies.</p>
+                    </div>
+                    <div class="certificate-actions">
+                        <a href="https://drive.google.com/file/d/1d_UZG6enhW0AI0Dc9nDhYZTShmffwHXF/view?usp=drive_link" target="_blank" rel="noopener" class="btn-link">
+                            View Certificate <i data-feather="external-link"></i>
+                        </a>
+                        <button class="btn-expand" onclick="toggleDetails(this)">
+                            Details <i data-feather="chevron-down"></i>
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Certificate 2 -->
+                <article class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon" aria-hidden="true">
+                            <i data-feather="award"></i>
+                        </div>
+                        <div>
+                            <h3>Java Fundamentals</h3>
+                            <p class="certificate-issuer">IBM</p>
+                        </div>
+                    </div>
+                    <p class="certificate-description">
+                        IBM certification in Java fundamentals and programming concepts.
+                    </p>
+                    <div class="certificate-details">
+                        <p>Core Java programming, OOP principles, data structures, and best practices.</p>
+                    </div>
+                    <div class="certificate-actions">
+                        <a href="https://courses.etrain.skillsnetwork.site/certificates/934dac5ef6104178863b94cbe9338daa" target="_blank" rel="noopener" class="btn-link">
+                            View Certificate <i data-feather="external-link"></i>
+                        </a>
+                        <button class="btn-expand" onclick="toggleDetails(this)">
+                            Details <i data-feather="chevron-down"></i>
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Certificate 3 -->
+                <article class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon" aria-hidden="true">
+                            <i data-feather="award"></i>
+                        </div>
+                        <div>
+                            <h3>Prompt Engineering</h3>
+                            <p class="certificate-issuer">SimpliLearn</p>
+                        </div>
+                    </div>
+                    <p class="certificate-description">
+                        Professional certificate in Prompt Engineering and AI-driven applications.
+                    </p>
+                    <div class="certificate-details">
+                        <p>Advanced techniques for crafting effective AI prompts, optimization strategies, and practical applications.</p>
+                    </div>
+                    <div class="certificate-actions">
+                        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI0MjgzIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODgyOTU2NV85MjEyMjkwMTc1NTc4MTUwODIwNS5wbmciLCJ1c2VybmFtZSI6IklyZmFhbiBBaGFtZWQifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion" target="_blank" rel="noopener" class="btn-link">
+                            View Certificate <i data-feather="external-link"></i>
+                        </a>
+                        <button class="btn-expand" onclick="toggleDetails(this)">
+                            Details <i data-feather="chevron-down"></i>
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Certificate 4 -->
+                <article class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon" aria-hidden="true">
+                            <i data-feather="award"></i>
+                        </div>
+                        <div>
+                            <h3>Introduction To GenAI</h3>
+                            <p class="certificate-issuer">SimpliLearn</p>
+                        </div>
+                    </div>
+                    <p class="certificate-description">
+                        Introduction to Generative AI concepts and applications by SimpliLearn.
+                    </p>
+                    <div class="certificate-details">
+                        <p>Foundational understanding of Generative AI, large language models, and their real-world applications.</p>
+                    </div>
+                    <div class="certificate-actions">
+                        <a href="https://simpli-web.app.link/e/dOYf18UJ3Vb" target="_blank" rel="noopener" class="btn-link">
+                            View Certificate <i data-feather="external-link"></i>
+                        </a>
+                        <button class="btn-expand" onclick="toggleDetails(this)">
+                            Details <i data-feather="chevron-down"></i>
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Certificate 5 -->
+                <article class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon" aria-hidden="true">
+                            <i data-feather="award"></i>
+                        </div>
+                        <div>
+                            <h3>Python 101</h3>
+                            <p class="certificate-issuer">IBM</p>
+                        </div>
+                    </div>
+                    <p class="certificate-description">
+                        Introductory Python certification by IBM.
+                    </p>
+                    <div class="certificate-details">
+                        <p>Python basics, data types, control structures, functions, and libraries.</p>
+                    </div>
+                    <div class="certificate-actions">
+                        <a href="https://courses.etrain.skillsnetwork.site/certificates/0a5e2882c8154560b119ead0cdef6d4c" target="_blank" rel="noopener" class="btn-link">
+                            View Certificate <i data-feather="external-link"></i>
+                        </a>
+                        <button class="btn-expand" onclick="toggleDetails(this)">
+                            Details <i data-feather="chevron-down"></i>
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Certificate 6 -->
+                <article class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon" aria-hidden="true">
+                            <i data-feather="award"></i>
+                        </div>
+                        <div>
+                            <h3>PostgreSQL</h3>
+                            <p class="certificate-issuer">SimpliLearn</p>
+                        </div>
+                    </div>
+                    <p class="certificate-description">
+                        Certified PostgreSQL Database Management by SimpliLearn.
+                    </p>
+                    <div class="certificate-details">
+                        <p>Database design, SQL queries, indexes, transactions, and performance optimization.</p>
+                    </div>
+                    <div class="certificate-actions">
+                        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIzMjA1IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODgzNTM1Ml85MjEyMjkwMTc1NTg2MDI5MDkzNC5wbmciLCJ1c2VybmFtZSI6IklyZmFhbiBBaGFtZWQifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion" target="_blank" rel="noopener" class="btn-link">
+                            View Certificate <i data-feather="external-link"></i>
+                        </a>
+                        <button class="btn-expand" onclick="toggleDetails(this)">
+                            Details <i data-feather="chevron-down"></i>
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Certificate 7 -->
+                <article class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon" aria-hidden="true">
+                            <i data-feather="award"></i>
+                        </div>
+                        <div>
+                            <h3>Master Artificial Intelligence</h3>
+                            <p class="certificate-issuer">SimpliLearn</p>
+                        </div>
+                    </div>
+                    <p class="certificate-description">
+                        Certification in Artificial Intelligence concepts for web applications development.
+                    </p>
+                    <div class="certificate-details">
+                        <p>AI fundamentals, machine learning basics, and integration of AI into web applications.</p>
+                    </div>
+                    <div class="certificate-actions">
+                        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI1MDY5IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODgzNzgzNV85MjE4Njg5MTc1NTg4NDAwNzk3Ni5wbmciLCJ1c2VybmFtZSI6IklyZmFhbiBBaGFtZWQifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion" target="_blank" rel="noopener" class="btn-link">
+                            View Certificate <i data-feather="external-link"></i>
+                        </a>
+                        <button class="btn-expand" onclick="toggleDetails(this)">
+                            Details <i data-feather="chevron-down"></i>
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Certificate 8 -->
+                <article class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon" aria-hidden="true">
+                            <i data-feather="award"></i>
+                        </div>
+                        <div>
+                            <h3>Advanced Prompt Engineering</h3>
+                            <p class="certificate-issuer">SimpliLearn</p>
+                        </div>
+                    </div>
+                    <p class="certificate-description">
+                        Professional certificate in Advanced Prompt Engineering and AI-driven applications.
+                    </p>
+                    <div class="certificate-details">
+                        <p>Advanced prompt techniques, chain-of-thought reasoning, and complex AI interaction patterns.</p>
+                    </div>
+                    <div class="certificate-actions">
+                        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI1NTE5IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODg0MDE5N185MjE4Njg5MTc1NTkzMjkxNzI2My5wbmciLCJ1c2VybmFtZSI6IklyZmFhbiBBaGFtZWQifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion" target="_blank" rel="noopener" class="btn-link">
+                            View Certificate <i data-feather="external-link"></i>
+                        </a>
+                        <button class="btn-expand" onclick="toggleDetails(this)">
+                            Details <i data-feather="chevron-down"></i>
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Certificate 9 -->
+                <article class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon" aria-hidden="true">
+                            <i data-feather="award"></i>
+                        </div>
+                        <div>
+                            <h3>Introduction to Google Cloud Platform</h3>
+                            <p class="certificate-issuer">SimpliLearn</p>
+                        </div>
+                    </div>
+                    <p class="certificate-description">
+                        Certified in Introduction to Google Cloud Platform, storage, and deployment tools for developers.
+                    </p>
+                    <div class="certificate-details">
+                        <p>GCP basics, cloud storage, compute services, and deployment strategies.</p>
+                    </div>
+                    <div class="certificate-actions">
+                        <a href="https://simpli.app.link/P20ulGQt5Vb" target="_blank" rel="noopener" class="btn-link">
+                            View Certificate <i data-feather="external-link"></i>
+                        </a>
+                        <button class="btn-expand" onclick="toggleDetails(this)">
+                            Details <i data-feather="chevron-down"></i>
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Certificate 10 -->
+                <article class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon" aria-hidden="true">
+                            <i data-feather="award"></i>
+                        </div>
+                        <div>
+                            <h3>Generative AI for Software Developers</h3>
+                            <p class="certificate-issuer">IBM</p>
+                        </div>
+                    </div>
+                    <p class="certificate-description">
+                        Certified by IBM in leveraging Generative AI tools, including prompt engineering, code generation, and integration of large language models.
+                    </p>
+                    <div class="certificate-details">
+                        <p>AI-assisted development, code generation tools, and LLM integration in software workflows.</p>
+                    </div>
+                    <div class="certificate-actions">
+                        <a href="https://courses.etrain.skillsnetwork.site/certificates/a92d76d529c84cecbcfbb66c69a84a55" target="_blank" rel="noopener" class="btn-link">
+                            View Certificate <i data-feather="external-link"></i>
+                        </a>
+                        <button class="btn-expand" onclick="toggleDetails(this)">
+                            Details <i data-feather="chevron-down"></i>
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Certificate 11 -->
+                <article class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon" aria-hidden="true">
+                            <i data-feather="award"></i>
+                        </div>
+                        <div>
+                            <h3>UI/UX Designing for Beginners</h3>
+                            <p class="certificate-issuer">SimpliLearn</p>
+                        </div>
+                    </div>
+                    <p class="certificate-description">
+                        Certified in the fundamentals of UI/UX design, covering user-centered design principles, wireframing, and prototyping.
+                    </p>
+                    <div class="certificate-details">
+                        <p>Design thinking, user research, wireframing, prototyping, and usability testing.</p>
+                    </div>
+                    <div class="certificate-actions">
+                        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI0OTE5IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODk3NDMwNV85MjI4MDYyMTc1NzgzMjI5MTk2MC5wbmciLCJ1c2VybmFtZSI6IklyZmFhbiBBaGFtZWQifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion" target="_blank" rel="noopener" class="btn-link">
+                            View Certificate <i data-feather="external-link"></i>
+                        </a>
+                        <button class="btn-expand" onclick="toggleDetails(this)">
+                            Details <i data-feather="chevron-down"></i>
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Certificate 12 -->
+                <article class="certificate-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon" aria-hidden="true">
+                            <i data-feather="award"></i>
+                        </div>
+                        <div>
+                            <h3>Introduction to Graphic Design & UI/UX Basics</h3>
+                            <p class="certificate-issuer">SimpliLearn</p>
+                        </div>
+                    </div>
+                    <p class="certificate-description">
+                        Certified in graphic design fundamentals and UI/UX basics, including design principles, typography, and visual hierarchy.
+                    </p>
+                    <div class="certificate-details">
+                        <p>Color theory, typography, layout design, and visual communication principles.</p>
+                    </div>
+                    <div class="certificate-actions">
+                        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIzNDA1IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODk3NDMxMF85MjI4MDYyMTc1NzgyNjI4NTMwOS5wbmciLCJ1c2VybmFtZSI6IklyZmFhbiBBaGFtZWQifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion" target="_blank" rel="noopener" class="btn-link">
+                            View Certificate <i data-feather="external-link"></i>
+                        </a>
+                        <button class="btn-expand" onclick="toggleDetails(this)">
+                            Details <i data-feather="chevron-down"></i>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Achievements Section -->
+        <section id="achievements" class="section" aria-labelledby="achievements-title">
+            <div class="section-header">
+                <h2 id="achievements-title" class="section-title">Achievements</h2>
+                <p class="section-subtitle">Recognition and competition successes</p>
+            </div>
+            
+            <div class="achievements-grid">
+                <article class="achievement-card">
+                    <h3>Finalist – Soft Logic Academy (Codeathon Event)</h3>
+                    <ul>
+                        <li>Participated in a codeathon solving real-world problems using frontend technologies and MySQL.</li>
+                        <li>Collaborated in a team to develop a working prototype within a month.</li>
+                    </ul>
+                </article>
+                
+                <article class="achievement-card">
+                    <h3>Participant & Winner – Web 'O' Spider (Hindustan University)</h3>
+                    <ul>
+                        <li>Developed a responsive UI in under 1 hour during the technical event.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Additional Information Section -->
+        <section id="additional" class="section" aria-labelledby="additional-title">
+            <div class="section-header">
+                <h2 id="additional-title" class="section-title">Additional Information</h2>
+            </div>
+            
+            <div class="additional-grid">
+                <!-- Soft Skills -->
+                <div class="info-card">
+                    <h3><i data-feather="users"></i> Soft Skills</h3>
+                    <div class="info-tags">
+                        <span class="info-tag">Communication</span>
+                        <span class="info-tag">Problem Solving</span>
+                        <span class="info-tag">Analytical Thinking</span>
+                        <span class="info-tag">Teamwork</span>
+                        <span class="info-tag">Time Management</span>
+                        <span class="info-tag">Adaptability</span>
+                    </div>
+                </div>
+                
+                <!-- Hobbies -->
+                <div class="info-card">
+                    <h3><i data-feather="heart"></i> Hobbies</h3>
+                    <div class="info-tags">
+                        <span class="info-tag">Fitness</span>
+                        <span class="info-tag">Biking</span>
+                        <span class="info-tag">Gaming</span>
+                        <span class="info-tag">Music</span>
+                        <span class="info-tag">Reading</span>
+                        <span class="info-tag">Sports</span>
+                        <span class="info-tag">Travelling</span>
+                        <span class="info-tag">Coding</span>
 
+
+                    </div>
+                </div>
+                
+                <!-- Languages -->
+                <div class="info-card">
+                    <h3><i data-feather="globe"></i> Languages</h3>
+                    <div class="info-tags">
+                        <span class="info-tag">English</span>
+                        <span class="info-tag">Tamil</span>
+                        <span class="info-tag">Hindi</span>
+                        <span class="info-tag">Urdu</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Resume Section -->
+        <section id="resume" class="section" aria-labelledby="resume-title">
+            <div class="resume-section">
+                <h2 id="resume-title">Download My Resume</h2>
+                <p>View or download my latest resume to learn more about my experience and qualifications.</p>
+                <div class="resume-actions">
+                    <button class="btn btn-primary" onclick="openResumeViewer()">
+                        <i data-feather="eye"></i>
+                        View Resume
+                    </button>
+                    <a href="https://drive.google.com/uc?export=download&id=1qbWyhRK_X-YIdoQGOd5JSXOSg5Hxzb9q" class="btn btn-secondary" download>
+                        <i data-feather="download"></i>
+                        Download Resume
+                    </a>
+                    <button class="btn btn-secondary" onclick="window.print()">
+                        <i data-feather="printer"></i>
+                        Print Page
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Education Section -->
+        <section id="education" class="section" aria-labelledby="education-title">
+            <div class="section-header">
+                <h2 id="education-title" class="section-title">Education</h2>
+            </div>
+            
+            <div class="education-grid">
+                <article class="education-card">
+                    <h4>Bachelor Of Computer Application</h4>
+                    <p class="education-institution">Hindustan Institute Of Technology and Sciences</p>
+                    <p class="education-details">2022-2025 | CGPA: 8.80</p>
+                </article>
+                
+                <article class="education-card">
+                    <h4>Secondary Education (12th Grade)</h4>
+                    <p class="education-institution">Kendriya Vidyalaya IIT Chennai</p>
+                    <p class="education-details">2020-2022 | 70%</p>
+                </article>
+                
+                <article class="education-card">
+                    <h4>Secondary Education (10th Grade)</h4>
+                    <p class="education-institution">Kendriya Vidyalaya IIT Chennai</p>
+                    <p class="education-details">2010-2020 | 72%</p>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="section" aria-labelledby="contact-title">
+            <div class="section-header">
+                <h2 id="contact-title" class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">I'd love to hear from you! Let's connect.</p>
+            </div>
+            
+            <div class="contact-container">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon" aria-hidden="true">
+                            <i data-feather="mail"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:kirfaanahamed1610@gmail.com">kirfaanahamed1610@gmail.com</a>
+                            <button class="copy-btn" onclick="copyToClipboard('kirfaanahamed1610@gmail.com', this)">
+                                <i data-feather="copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon" aria-hidden="true">
+                            <i data-feather="phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <a href="tel:+919025689520">+91 9025689520</a>
+                            <button class="copy-btn" onclick="copyToClipboard('+919025689520', this)">
+                                <i data-feather="copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon" aria-hidden="true">
+                            <i data-feather="map-pin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Chennai, Tamil Nadu, India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon" aria-hidden="true">
+                            <i data-feather="linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/irfaan-ahamed-k-0529b42a4/" target="_blank" rel="noopener" >Irfaan Ahamed</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon" aria-hidden="true">
+                            <i data-feather="github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/irfaan1610" target="_blank" rel="noopener">irfaan1610</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form action="https://formspree.io/f/xwvpgoyg" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i data-feather="send"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/irfaan-ahamed-k-0529b42a4/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                <i data-feather="linkedin"></i>
+            </a>
+            <a href="https://github.com/irfaan1610" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                <i data-feather="github"></i>
+            </a>
+            <a href="mailto:kirfaanahamed1610@gmail.com" class="social-link" aria-label="Email">
+                <i data-feather="mail"></i>
+            </a>
+        </div>
+        <p>&copy; 2025 Irfaan Ahamed. All rights reserved.</p>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+            Built with passion for innovation and excellence.
+        </p>
+    </footer>
+    
+    <!-- Case Study Modal -->
+    <div id="caseStudyModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Project Case Study</h2>
+                <button class="modal-close" onclick="closeModal('caseStudyModal')" aria-label="Close modal">
+                    &times;
+                </button>
+            </div>
+            <div class="modal-body" id="caseStudyContent">
+                <!-- Content will be dynamically inserted -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Resume Viewer Modal -->
+    <div id="resumeModal" class="modal" role="dialog" aria-labelledby="resumeModalTitle" aria-modal="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="resumeModalTitle">Resume Viewer</h2>
+                <button class="modal-close" onclick="closeModal('resumeModal')" aria-label="Close modal">
+                    &times;
+                </button>
+            </div>
+            <div class="modal-body">
+                <iframe 
+                    src="https://drive.google.com/file/d/1qOiRGSOyDdlL1NFUxKrcv-FRopKFyvpm/view?usp=sharing" 
+                    class="resume-viewer"
+                    title="Resume PDF Viewer"
+                    allow="autoplay">
+                </iframe>
+            </div>
+        </div>
+    </div>
+    
     <script>
-        // Initialize particles
-        tsParticles.load("tsparticles", {
-            background: { color: { value: "transparent" } },
-            particles: {
-                number: { value: 40 },
-                size: { value: 3 },
-                move: { enable: true, speed: 1 },
-                links: { enable: true, color: "#ffffff", distance: 150 },
-                color: { value: "#ffffff" },
-                opacity: { value: 0.6 }
+        // Initialize Feather Icons
+        feather.replace();
+        
+        // ========== THEME MANAGEMENT ==========
+        
+        // Load theme preference
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme') || 
+                (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+            const savedAccent = localStorage.getItem('accent') || 'professional';
+            
+            document.body.classList.toggle('light-mode', savedTheme === 'light');
+            applyAccent(savedAccent);
+            updateThemeButton(savedTheme);
+        }
+        
+        // Toggle theme
+        document.querySelector('.theme-toggle').addEventListener('click', function() {
+            const isLight = document.body.classList.toggle('light-mode');
+            const theme = isLight ? 'light' : 'dark';
+            localStorage.setItem('theme', theme);
+            updateThemeButton(theme);
+        });
+        
+        function updateThemeButton(theme) {
+            const btn = document.querySelector('.theme-toggle');
+            const icon = btn.querySelector('i');
+            const text = btn.querySelector('#themeText');
+            
+            if (theme === 'light') {
+                icon.setAttribute('data-feather', 'moon');
+                text.textContent = 'Dark';
+            } else {
+                icon.setAttribute('data-feather', 'sun');
+                text.textContent = 'Light';
+            }
+            feather.replace();
+        }
+        
+        // Accent color management
+        document.querySelector('.accent-toggle').addEventListener('click', function(e) {
+            e.stopPropagation();
+            document.getElementById('accentSwatches').classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.accent-toggle') && !e.target.closest('.accent-swatches')) {
+                document.getElementById('accentSwatches').classList.remove('active');
             }
         });
-
-        // Smooth scrolling
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({
-                behavior: 'smooth'
+        
+        document.querySelectorAll('.accent-swatch').forEach(swatch => {
+            swatch.addEventListener('click', function() {
+                const accent = this.dataset.accent;
+                applyAccent(accent);
+                localStorage.setItem('accent', accent);
+                
+                document.querySelectorAll('.accent-swatch').forEach(s => s.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById('accentSwatches').classList.remove('active');
+            });
+        });
+        
+        function applyAccent(accent) {
+            const colors = {
+                professional: '#d9fb06',
+                creative: '#00d4ff',
+                minimal: '#ffffff'
+            };
+            
+            document.documentElement.style.setProperty('--brand-primary', colors[accent]);
+            document.documentElement.style.setProperty('--brand-hover', colors[accent] + 'd9');
+            document.documentElement.style.setProperty('--brand-active', colors[accent] + 'b3');
+            
+            // Update active swatch
+            document.querySelectorAll('.accent-swatch').forEach(s => {
+                s.classList.toggle('active', s.dataset.accent === accent);
             });
         }
+        
+        // ========== NAVIGATION ==========
+        
+        // Mobile menu toggle
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            const menu = document.querySelector('.nav-menu');
+            const isActive = menu.classList.toggle('active');
+            this.setAttribute('aria-expanded', isActive);
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.remove('active');
+                document.querySelector('.nav-toggle').setAttribute('aria-expanded', 'false');
+            });
+        });
+        
+        // ========== SKILLS CHART ==========
+        
+     
+(function () {
+    let skillsChart;
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+    function getThemeColors() {
+        const styles = getComputedStyle(document.body);
+        return {
+            text: styles.getPropertyValue('--text-light').trim(),
+            border: styles.getPropertyValue('--border-color').trim(),
+            bg: styles.getPropertyValue('--bg-card').trim()
+        };
+    }
+
+    function renderSkillsChart() {
+        const ctx = document.getElementById('skillsChart');
+        if (!ctx || typeof Chart === 'undefined') return;
+
+        const theme = getThemeColors();
+
+        if (skillsChart) {
+            skillsChart.destroy();
+        }
+
+        skillsChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: [
+                    'Java',
+                    'Frameworks',
+                    'Frontend (HTML/CSS/JS)',
+                    'UI / UX',
+                    'Databases',
+                    'AI / Prompting'
+                ],
+                datasets: [{
+                    label: 'Skill Level',
+                    data: [85, 75, 90, 85, 90, 100],
+                    backgroundColor: theme.text === '#000000'
+                        ? 'rgba(0,0,0,0.08)'
+                        : 'rgba(255,255,255,0.08)',
+                    borderColor: theme.text,
+                    borderWidth: 2,
+                    pointBackgroundColor: theme.text
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    r: {
+                        min: 0,
+                        max: 100,
+
+                        ticks: { display: false },
+                        angleLines: {
+                            color: theme.border
+                        },
+                        grid: {
+                            color: theme.border
+                        },
+                        pointLabels: {
+                            color: theme.text,
+                            font: {
+                                size: 13,
+                                weight: '600'
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', renderSkillsChart);
+
+    /* Re-render chart on theme toggle */
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            setTimeout(renderSkillsChart, 300);
+        });
+    }
+})();
+
+        
+        // ========== PROJECT FILTERING ==========
+        
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const filter = this.dataset.filter;
+                
+                // Update active button
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter projects
+                document.querySelectorAll('.project-card').forEach(card => {
+                    if (filter === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        const types = card.dataset.type.split(' ');
+                        card.classList.toggle('hidden', !types.includes(filter));
+                    }
+                });
+            });
+        });
+        
+        // ========== CASE STUDY MODAL ==========
+        
+        const caseStudies = {
+            gofit: {
+                title: 'GOFIT - Fitness Tracker ChatBot',
+                problem: 'Many individuals struggle to find personalized fitness guidance that adapts to their unique health needs. Traditional fitness apps often lack conversational interfaces and fail to provide real-time, contextual advice on diet, exercise, and wellness.',
+                approach: 'Developed an AI-powered chatbot using Python and Streamlit that leverages Groq APIs for natural language understanding. The system processes user queries about fitness, nutrition, and wellness, providing personalized recommendations based on user profiles and goals. Implemented features for diet planning with macro/micro nutrient breakdowns and customized workout suggestions.',
+                result: 'Successfully created an interactive fitness companion that makes health management more accessible. Users can receive instant, personalized advice on exercises, nutrition, and lifestyle choices. The clean Streamlit UI ensures smooth user experience, while the AI-driven backend provides accurate and contextually relevant fitness guidance.',
+                features: [
+                    'Conversational AI interface for natural fitness queries',
+                    'Personalized diet planning with detailed nutrient analysis',
+                    'Custom workout routines based on user goals and fitness level',
+                    'Wellness guidance including hydration and nutrient tracking',
+                    'Real-time response generation using advanced LLMs'
+                ],
+                technologies: ['Python', 'Streamlit', 'Groq APIs', 'Natural Language Processing', 'Machine Learning']
+            },
+            servzo: {
+                title: 'SERVZO - Local Service Platform',
+                problem: 'Finding reliable local service providers for everyday needs like home repairs, personal care, and maintenance is challenging. Customers lack a centralized platform to discover, compare, and book trusted service providers in their area.',
+                approach: 'Built a full-stack web platform connecting service providers with customers. Implemented a comprehensive booking system with MySQL database for secure data management. Created detailed provider profiles with ratings and reviews to build trust. Developed an intuitive search and discovery system for users to find services by category and location.',
+                result: 'Launched a successful platform that bridges the gap between service seekers and providers. The application enables efficient service discovery, transparent booking processes, and trust-building through user feedback. The robust MySQL backend ensures fast data retrieval and secure transactions.',
+                features: [
+                    'Advanced service discovery with location-based filtering',
+                    'Integrated booking system with real-time availability',
+                    'Comprehensive provider profiles with portfolios',
+                    'Ratings and reviews system for quality assurance',
+                    'Secure payment processing and transaction management'
+                ],
+                technologies: ['MySQL', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP', 'AJAX']
+            },
+            memories: {
+                title: 'MEMORIES - Location-Based Story Sharing',
+                problem: 'People want to preserve and share personal stories tied to specific locations, but traditional social platforms lack geolocation-integrated storytelling features. Users need a visual way to map their memories and explore location-based narratives.',
+                approach: 'Developed a full-stack application combining Spring Boot backend with Leaflet map integration. Implemented secure CRUD operations for story management with MySQL database. Created an interactive map interface where users can tag stories to specific locations and explore memories shared by others. Designed a responsive Bootstrap UI for seamless navigation across devices.',
+                result: 'Created an engaging platform where users can create a visual diary of their experiences. The interactive map provides an intuitive way to explore stories by location. The scalable Spring Boot backend with optimized MySQL queries ensures fast performance even with large datasets.',
+                features: [
+                    'Interactive map with custom markers for story locations',
+                    'Secure user authentication and authorization',
+                    'Real-time story posting and retrieval',
+                    'Search and filter stories by location and category',
+                    'Responsive design for mobile and desktop experiences'
+                ],
+                technologies: ['Java', 'Spring Boot', 'MySQL', 'Leaflet.js', 'HTML', 'CSS', 'JavaScript', 'REST APIs']
+                
+            },
+            tasktracker: {
+                title: 'BYTEFLOW - Productivity Tool',
+                problem: 'Managing daily tasks efficiently requires a simple yet powerful tool. Many task management apps are either too complex or lack essential features like priority management and real-time tracking.',
+                approach: 'Built a full-stack task management application with Spring Boot and MySQL. Implemented comprehensive CRUD operations for task creation, updates, and deletion. Added priority level system (High, Medium, Low) to help users focus on important tasks. Created a clean, responsive Bootstrap UI with real-time updates for seamless task tracking.',
+                result: 'Delivered a user-friendly productivity tool that helps users stay organized and focused. The application provides fast, reliable task management with an intuitive interface. The optimized backend ensures quick response times and data consistency.',
+                features: [
+                    'Complete task lifecycle management (Create, Read, Update, Delete)',
+                    'Priority-based task organization',
+                    'Real-time task completion tracking',
+                    'Responsive design for all devices',
+                    'Fast and secure backend with Spring Boot'
+                ],
+                technologies: ['Java', 'Spring Boot', 'MySQL', 'HTML', 'CSS', 'Bootstrap', 'JavaScript', 'REST APIs']
+            }
         };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        // ===== PROJECT SCREENSHOTS (SAFE ADDITION) =====
+const projectScreenshots = {
+    gofit: [
+        'assets/images/gofit1.png',
+        'assets/images/gofit2.png',
+        'assets/images/gofit3.png',
+        'assets/images/gofit4.png',
+        'assets/images/gofit5.png',
+        'assets/images/gofit6.png',
+        'assets/images/gofit7.png',
+        'assets/images/gofit8.png'
+
+    ],
+    servzo: [
+        'assets/images/servzo1.png',
+        'assets/images/servzo2.png',
+        'assets/images/servzo3.png',
+        'assets/images/servzo4.png',
+        'assets/images/servzo5.png',
+        'assets/images/servzo6.png',
+        'assets/images/servzo7.png',
+        'assets/images/servzo8.png'
+    ],
+    memories: [
+        'assets/images/memories1.png',
+        'assets/images/memories2.png',
+        'assets/images/memories3.png',
+        'assets/images/memories4.png',
+        'assets/images/memories5.png',
+        'assets/images/memories6.png',
+        'assets/images/memories7.png',
+        'assets/images/memories8.png'
+    ],
+    tasktracker: [
+        'assets/images/byteflow1.png',
+        'assets/images/byteflow2.png',
+        'assets/images/byteflow3.png',
+        'assets/images/byteflow4.png',
+        'assets/images/byteflow5.png',
+        'assets/images/byteflow6.png',
+        'assets/images/byteflow7.png',
+        'assets/images/byteflow8.png'
+    ]
+};
+
+        
+        function openCaseStudy(projectId) {
+            const study = caseStudies[projectId];
+            if (!study) return;
+            const screenshots = projectScreenshots[projectId] || [];
+
+            const content = `
+                <div class="case-study-section">
+                    <h3>🎯 Problem</h3>
+                    <p>${study.problem}</p>
+                </div>
+                
+                <div class="case-study-section">
+                    <h3>🛠 Approach</h3>
+                    <p>${study.approach}</p>
+                </div>
+                
+                <div class="case-study-section">
+                    <h3>✨ Result</h3>
+                    <p>${study.result}</p>
+                </div>
+                
+                <div class="case-study-section">
+                    <h3>🚀 Key Features</h3>
+                    <ul>
+                        ${study.features.map(f => `<li>${f}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="case-study-section">
+                    <h3>💻 Technologies Used</h3>
+                    <div class="project-tech">
+                        ${study.technologies.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+                    </div>
+                </div>
+                
+                <div class="carousel">
+                    <div class="carousel-images">
+                        <div class="carousel-image">Project Screenshot Placeholder 1</div>
+                        <div class="carousel-image">Project Screenshot Placeholder 2</div>
+                        <div class="carousel-image">Project Screenshot Placeholder 3</div>
+                        <div class="carousel-image">Project Screenshot Placeholder 4</div>
+                        <div class="carousel-image">Project Screenshot Placeholder 5</div>
+                        <div class="carousel-image">Project Screenshot Placeholder 6</div>
+                        <div class="carousel-image">Project Screenshot Placeholder 7</div>
+                        <div class="carousel-image">Project Screenshot Placeholder 8</div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn" onclick="previousSlide()" aria-label="Previous image">
+                            <i data-feather="chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn" onclick="nextSlide()" aria-label="Next image">
+                            <i data-feather="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('caseStudyContent').innerHTML = content;
+            document.getElementById('modalTitle').textContent = study.title;
+            document.getElementById('caseStudyModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+
+            currentSlide = 0;
+            updateCarousel();
+            feather.replace();        
+        // ===== REPLACE CAROUSEL PLACEHOLDERS WITH IMAGES =====
+            setTimeout(() => {
+            const images = projectScreenshots[projectId];
+            if (!images) return;
+
+            const modal = document.getElementById('caseStudyModal');
+            const slots = modal.querySelectorAll('.carousel-image');
+
+
+                slots.forEach((slot, index) => {
+                    if (images[index]) {
+                        slot.innerHTML = `
+                            <img src="${images[index]}" alt="Project screenshot ${index + 1}">
+                        `;
+                    }
+                });
+            }, 0);
+            }
+
+        // Carousel functionality
+        let currentSlide = 0;
+        
+        function nextSlide() {
+            const images = document
+    .getElementById('caseStudyModal')
+    .querySelectorAll('.carousel-image');
+
+            currentSlide = (currentSlide + 1) % images.length;
+            updateCarousel();
+        }
+        
+        function previousSlide() {
+            const images = document
+    .getElementById('caseStudyModal')
+    .querySelectorAll('.carousel-image');
+
+            currentSlide = (currentSlide - 1 + images.length) % images.length;
+            updateCarousel();
+        }
+        
+        function updateCarousel() {
+            const container = document.querySelector('.carousel-images');
+            if (container) {
+                container.style.transform = `translateX(-${currentSlide * 100}%)`;
+            }
+        }
+        
+        // ========== RESUME VIEWER ==========
+        
+        function openResumeViewer() {
+            document.getElementById('resumeModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // ========== MODAL MANAGEMENT ==========
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+            currentSlide = 0;
+        }
+        
+        // Close modal on outside click
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal(this.id);
                 }
             });
-        }, observerOptions);
-
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
         });
-
-        // Add smooth scrolling to CTA buttons
+        
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal.active').forEach(modal => {
+                    closeModal(modal.id);
+                });
+            }
+        });
+        
+        // ========== CERTIFICATE DETAILS ==========
+        
+        function toggleDetails(button) {
+            const card = button.closest('.certificate-card');
+            const details = card.querySelector('.certificate-details');
+            const icon = button.querySelector('i');
+            
+            details.classList.toggle('expanded');
+            
+            if (details.classList.contains('expanded')) {
+                icon.setAttribute('data-feather', 'chevron-up');
+                button.querySelector('span') ? button.querySelector('span').textContent = 'Less' : null;
+            } else {
+                icon.setAttribute('data-feather', 'chevron-down');
+                button.querySelector('span') ? button.querySelector('span').textContent = 'Details' : null;
+            }
+            
+            feather.replace();
+        }
+        
+        // ========== COPY TO CLIPBOARD ==========
+        
+        function copyToClipboard(text, button) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalHTML = button.innerHTML;
+                button.innerHTML = '<i data-feather="check"></i> Copied!';
+                feather.replace();
+                
+                setTimeout(() => {
+                    button.innerHTML = originalHTML;
+                    feather.replace();
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                alert('Failed to copy to clipboard');
+            });
+        }
+        
+        // ========== SMOOTH SCROLL ==========
+        
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
-                    target.scrollIntoView({
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
                         behavior: 'smooth'
                     });
                 }
             });
         });
-
-        // Dark/Light Mode Toggle
-        const toggleBtn = document.getElementById("theme-toggle");
-        toggleBtn.addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
-            if (document.body.classList.contains("dark-mode")) {
-                toggleBtn.innerHTML = "☀️ Light Mode";
-            } else {
-                toggleBtn.innerHTML = "🌙 Dark Mode";
-            }
+        
+        // ========== INITIALIZATION ==========
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadTheme();
+            
+            // // Initialize Chart.js when it loads
+            // if (typeof Chart !== 'undefined') {
+            //     initSkillsChart();
+            // } else {
+            //     // Wait for Chart.js to load
+            //     const checkChart = setInterval(() => {
+            //         if (typeof Chart !== 'undefined') {
+            //             initSkillsChart();
+            //             clearInterval(checkChart);
+            //         }
+            //     }, 100);
+            // }
+            
+            // Fade in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.section').forEach(section => {
+                observer.observe(section);
+            });
         });
     </script>
 </body>
